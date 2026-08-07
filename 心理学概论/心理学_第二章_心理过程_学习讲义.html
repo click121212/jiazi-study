@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心理学概论 · 第二章 心理过程 — 学习讲义</title>
+<style>
+  :root {
+    --primary: #2563eb; --primary-light: #dbeafe; --accent: #dc2626; --accent-light: #fee2e2;
+    --success: #16a34a; --success-light: #dcfce7; --warning: #d97706; --warning-light: #fef3c7;
+    --bg: #fafafa; --card-bg: #ffffff; --text: #1f2937; --text-light: #6b7280; --border: #e5e7eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; padding: 0; }
+  .container { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+  .header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 3px solid var(--primary); }
+  .header h1 { font-size: 2rem; color: var(--primary); margin-bottom: 8px; letter-spacing: 2px; }
+  .header .subtitle { font-size: 1rem; color: var(--text-light); margin-bottom: 16px; }
+  .header .meta { display: inline-flex; gap: 16px; font-size: 0.85rem; color: var(--text-light); background: var(--primary-light); padding: 8px 20px; border-radius: 20px; }
+  .toc { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 24px 28px; margin-bottom: 40px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .toc h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+  .toc ul { list-style: none; } .toc li { padding: 6px 0; font-size: 0.95rem; }
+  .toc li a { color: var(--text); text-decoration: none; transition: color 0.2s; } .toc li a:hover { color: var(--primary); }
+  .toc .indent { padding-left: 24px; color: var(--text-light); }
+  .section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 32px 36px; margin-bottom: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .section-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--border); }
+  .section-number { display: inline-block; background: var(--primary); color: #fff; font-size: 0.8rem; padding: 4px 12px; border-radius: 4px; margin-bottom: 8px; }
+  .section h2 { font-size: 1.5rem; color: var(--text); margin-bottom: 8px; }
+  .section h3 { font-size: 1.2rem; color: var(--primary); margin-top: 28px; margin-bottom: 12px; padding-left: 12px; border-left: 4px solid var(--primary); }
+  .section h4 { font-size: 1.05rem; color: var(--text); margin-top: 20px; margin-bottom: 10px; }
+  .key-point { background: var(--accent-light); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 16px 0; }
+  .key-point .label { font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 6px; display: block; }
+  .key-point p, .key-point li { font-size: 0.95rem; }
+  .tip { background: var(--success-light); border-left: 4px solid var(--success); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 16px 0; }
+  .tip .label { font-size: 0.8rem; font-weight: 700; color: var(--success); margin-bottom: 6px; display: block; }
+  .exam-focus { background: var(--warning-light); border: 2px solid var(--warning); border-radius: 8px; padding: 16px 20px; margin: 16px 0; }
+  .exam-focus .label { font-size: 0.8rem; font-weight: 700; color: var(--warning); margin-bottom: 6px; display: block; }
+  .definition { background: var(--primary-light); border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 0.95rem; }
+  .definition .label { font-weight: 700; color: var(--primary); }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.9rem; }
+  th, td { border: 1px solid var(--border); padding: 10px 14px; text-align: left; }
+  th { background: var(--primary-light); color: var(--primary); font-weight: 600; }
+  tr:nth-child(even) { background: #f9fafb; }
+  .summary { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border: 1px solid #bae6fd; border-radius: 12px; padding: 20px 24px; margin: 24px 0; }
+  .summary h4 { color: #0369a1; margin-bottom: 12px; }
+  .summary ul { padding-left: 20px; } .summary li { margin-bottom: 6px; font-size: 0.92rem; }
+  .final-summary { background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%); color: #fff; border-radius: 16px; padding: 32px 36px; margin: 40px 0 20px; }
+  .final-summary h2 { color: #fff; margin-bottom: 20px; font-size: 1.4rem; }
+  .final-summary h3 { color: #bfdbfe; margin-top: 20px; margin-bottom: 10px; font-size: 1.1rem; border-left: none; padding-left: 0; }
+  .final-summary ul { padding-left: 20px; } .final-summary li { color: #e0e7ff; font-size: 0.92rem; margin-bottom: 6px; } .final-summary .label { color: #fbbf24; }
+  p { margin-bottom: 12px; font-size: 0.95rem; } strong { color: var(--text); }
+  ul, ol { padding-left: 24px; margin-bottom: 12px; } ul li, ol li { font-size: 0.95rem; margin-bottom: 4px; }
+  .footer { text-align: center; color: var(--text-light); font-size: 0.82rem; padding: 24px 0; border-top: 1px solid var(--border); margin-top: 40px; }
+  @media print { body { background: #fff; } .section { break-inside: avoid; box-shadow: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>心理学概论</h1>
+  <p class="subtitle">第二章 心理过程 — 学习讲义</p>
+  <div class="meta">
+    <span>教材：孙时进 主编《心理学概论》</span>
+    <span>|</span>
+    <span>讲义：核心考点讲义</span>
+  </div>
+</div>
+
+<!-- ==================== AUDIO REVIEW ==================== -->
+<div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px 28px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+    <span style="font-size: 1.3rem;">🎧</span>
+    <span style="font-weight: 600; font-size: 1rem; color: var(--primary);">本章复习语音讲解（晓晓 · AI 语音）</span>
+  </div>
+  <audio controls preload="none" style="width: 100%; border-radius: 6px;" src="音频/chapter2_review.mp3"></audio>
+  <p style="font-size: 0.82rem; color: var(--text-light); margin-top: 10px; margin-bottom: 0;">约 6 分钟 · 全章要点串联讲解 · 播放中按 ← → 方向键可后退/前进 5 秒</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border);">
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">空格 播放/暂停</span>
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">→ 单击 快进5s</span>
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">→ 长按 2x快进</span>
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">← 单击 后退5s</span>
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">← 长按 2x倒退</span>
+  </div>
+</div>
+
+<div class="toc">
+  <h3>本章导航 — 心理过程的五环信息加工流程</h3>
+  <ul>
+    <li><a href="#sec0">要点：信息加工比喻（感觉→知觉→注意→记忆→思维）</a></li>
+    <li><a href="#sec1">第一节 感觉：信息的输入和登录</a></li>
+    <li class="indent"><a>感受器 · 阈限（绝对/差别） · 感觉适应 · 感觉剥夺</a></li>
+    <li><a href="#sec2">第二节 知觉：信息的识别</a></li>
+    <li class="indent"><a>知觉组织（守恒、图形-背景） · 对象识别理论 · 自下而上/自上而下加工</a></li>
+    <li><a href="#sec3">第三节 注意：信息的选择</a></li>
+    <li class="indent"><a>注意概念 · 无意/有意注意 · 品质特点 · 自动加工 vs 控制加工</a></li>
+    <li><a href="#sec4">第四节 记忆：信息的储存和提取</a></li>
+    <li class="indent"><a>记忆分类 · 记忆系统 · 长时记忆组织 · 遗忘理论 · 遗忘规律</a></li>
+    <li><a href="#sec5">第五节 思维：信息的演算</a></li>
+    <li class="indent"><a>思维分类 · 概念形成 · 问题解决方式 · 影响问题解决的因素</a></li>
+    <li><a href="#summary">总结：备考要点速览</a></li>
+  </ul>
+</div>
+
+<!-- ========== CHAPTER INTRO ========== -->
+<div class="section" id="sec0">
+  <div class="section-header">
+    <span class="section-number">导览</span>
+    <h2>第二章 心理过程 — "信息加工"的全流程视角</h2>
+  </div>
+  
+  <div class="definition">
+    <span class="label">教科书引言摘要：</span>心理过程（感觉、知觉、注意、记忆、思维）是其他所有心理活动的基础——情绪活动、个性特点的形成、社会交往行为、心理偏差的形成都是以它们为基础的。本章按照认知心理学的<strong>信息加工</strong>流程来组织：感觉=输入和登录；知觉=识别；注意=选择；记忆=储存和提取；思维=演算。
+  </div>
+
+  <div class="key-point">
+    <span class="label">讲义核心考点：五环节定位</span>
+    <p>感觉：信息的<strong>输入</strong>和<strong>登录</strong> → 知觉：信息的<strong>识别</strong> → 注意：信息的<strong>选择</strong> → 记忆：信息的<strong>储存</strong>和<strong>提取</strong> → 思维：信息的<strong>演算</strong></p>
+    <p style="margin-top:8px;">这五环层层递进，构成一个完整的认知加工链条。</p>
+  </div>
+</div>
+
+<!-- ========== SECTION 1: 感觉 ========== -->
+<div class="section" id="sec1">
+  <div class="section-header">
+    <span class="section-number">第一节</span>
+    <h2>感觉：信息的输入和登录</h2>
+  </div>
+
+  <h3>一、感受器</h3>
+  <div class="definition">
+    <span class="label">定义：</span>感受器是信息进入心理活动的主要入口。主要功能：<strong>收集信息</strong>和<strong>能量转换</strong>。每种感受器都有专门负责收集的信号对象，称为<strong>适宜刺激</strong>。
+  </div>
+
+  <p>教科书的精细解释：为提高信息获取效率，有些感受器聚集形成<strong>专门的感觉器官</strong>——眼睛聚光波、耳朵收声音、鼻子闻气味、舌头辨滋味。而温冷觉、痛觉、触觉等的感受器则<strong>遍布全身</strong>。</p>
+
+  <div class="tip">
+    <span class="label">理解要点：感受器的两个核心功能</span>
+    <ol>
+      <li><strong>收集信息：</strong>接收身体内外环境的物理、化学信号（光波、声波、温度等是物理能量；气味、滋味是化学分子）</li>
+      <li><strong>能量转换：</strong>感受器把这些物理/化学能量转换成<strong>神经冲动</strong>（生物能量），因为大脑的"工作语言"是动作电位。感受器对物理化学信号敏感，大脑只识别神经冲动。</li>
+    </ol>
+    <p><strong>适宜刺激：</strong>每种感受器有专门负责的信号对象。如眼睛的适宜刺激是光波——按压眼球也能产生"眼冒金星"的感觉，但那不是适宜刺激。</p>
+  </div>
+
+  <h3>二、阈限（感觉的最小刺激量）</h3>
+
+  <table>
+    <tr><th>阈限类型</th><th>定义</th><th>举例</th></tr>
+    <tr><td><strong>绝对阈限</strong></td><td>刚能够引起感觉的刺激的<strong>最小强度</strong></td><td>极微弱的声音，再响一点就听见了——那个"刚刚听到"的响度就是绝对阈限</td></tr>
+    <tr><td><strong>差别阈限</strong></td><td>刚能够引起<strong>差别感觉</strong>的刺激间最小差异的强度</td><td>乐音的音高变化了一点点，刚好能辨别"不一样了"——这个最小可察觉差异就是差别阈限</td></tr>
+  </table>
+
+  <div class="key-point">
+    <span class="label">讲义核心考点</span>
+    <p>阈限是衡量感受器<strong>感受性（灵敏度）</strong>的指标：<strong>阈限越低，感受性越好</strong>。音乐家需要一副"好耳朵"——不仅能听见最微弱的音符（低绝对阈限），还要能分辨最细微的音高差异（低差别阈限）。</p>
+  </div>
+
+  <h4>感觉适应</h4>
+  <div class="key-point"><span class="label">讲义核心考点</span><p>同一刺激长时间作用于同一群感受器 → 感受性发生变化。<strong>大多数感觉适应的结果是感受性下降或阈限提高。</strong>例如：自己喷了香水，久了就闻不到了（但别人还能闻到）；冬天走出室外，一开始很冷，过一会儿不觉得冷了。</p></div>
+
+  <p>视觉适应最为特殊——涉及两种感光细胞：
+    <br><strong>暗适应</strong>（进入黑暗环境，如走进电影院）：视杆细胞的感受性<strong>提高</strong>，需要较长时间
+    <br><strong>明适应</strong>（从暗到亮）：视锥细胞的感受性<strong>下降</strong>，很快就完成</p>
+
+  <h3>三、感觉的作用——感觉剥夺研究</h3>
+  <p>利列（Lilly）的经典实验：被试裸身躺在与体温相同的水中，戴深色护目镜，几乎丧失所有感觉。结果：被试<strong>丧失了时间概念，难以集中注意，甚至产生幻觉</strong>（如看见多腿的长形动物在背后爬）。</p>
+
+  <div class="key-point">
+    <span class="label">讲义核心考点</span>
+    <p>感觉过程不仅是认识过程的<strong>起点</strong>，对于维持正常的心理功能同样是<strong>必不可少的</strong>。可以通过改变环境中感觉刺激的丰富性，<strong>调节大脑皮层的兴奋状态</strong>。</p>
+  </div>
+
+  <p><strong>神经通路补充：</strong>感觉信号入脑后分成两路——<strong>特异性传导通路</strong>产生清晰的感觉经验；<strong>非特异性传导通路</strong>经过脑干网状结构，维持大脑皮层的<strong>兴奋性和觉醒水平</strong>。如果后者信号减弱，大脑皮层将从兴奋转入抑制状态。</p>
+
+  <div class="summary"><h4>第一节 小结</h4><ul>
+    <li>感受器 = 信息入口 + 能量转换器；适宜刺激 = 最匹配的刺激类型</li>
+    <li>绝对阈限=能感知的最小量；差别阈限=能察觉差异的最小变化量</li>
+    <li>感觉适应大多=感受性下降；暗适应=感受性提高（例外）</li>
+    <li>感觉剥夺→心理功能紊乱，感觉不是可有可无的</li>
+  </ul></div>
+</div>
+
+<!-- ========== SECTION 2: 知觉 ========== -->
+<div class="section" id="sec2">
+  <div class="section-header"><span class="section-number">第二节</span><h2>知觉：信息的识别</h2></div>
+
+  <p>感觉登录的是信息的<strong>个别特征</strong>（颜色、形状、声音频率）；知觉则是对这些感觉信息进行<strong>整合</strong>并<strong>赋予加工对象意义</strong>——"我看到了一幅人像"，而不是"我看到了一堆灰色方块"。</p>
+
+  <h3>一、知觉组织</h3>
+
+  <div class="key-point"><span class="label">讲义核心考点</span><p><strong>守恒</strong>是知觉组织的重要形式：大小恒常性、形状恒常性、亮度恒常性、颜色恒常性等。物体在视网膜上的成像随距离角度变化而变化，但知觉告诉我们"这还是同一个东西"。</p></div>
+
+  <p>飞机在100米远处，视网膜上的像缩小到1米时的1/100，但我们知道飞机并没有变小——这就是<strong>大小恒常性</strong>。一扇门开启角度不同，视网膜上像的形状完全不同，但我们知道那还是同一扇门——这就是<strong>形状恒常性</strong>。</p>
+
+  <p><strong>图形和背景的区分</strong>是知觉组织的又一形式。图形是有轮廓和形状的知觉对象，背景是没有形状的衬托物。"人脸—花瓶两可图"：黑色人脸成为图形时白色背景中的花瓶就不存在了——反之亦然。</p>
+
+  <h3>二、对象识别三大理论</h3>
+
+  <table>
+    <tr><th>理论</th><th>核心观点</th><th>特点</th></tr>
+    <tr><td><strong>模板匹配理论</strong></td><td>记忆库中储存了大量符号模板，刺激信息与模板一一比对，找到最匹配的完成识别</td><td>缺陷：每种符号形式都需要一个模板，储存量将达天文数字</td></tr>
+    <tr><td><strong>原型匹配理论</strong></td><td>存放的是原型（一类符号基本成分的抽象形式），匹配是<strong>近似匹配</strong>而非一一对应</td><td>解决了模板匹配的储存量问题</td></tr>
+    <tr><td><strong>特征分析理论</strong></td><td>符号由基本特征（横线、竖线、斜线、曲线等）按一定关系组合而成，记忆库储存的是"特征表"</td><td>部分获得了神经生理研究的支持</td></tr>
+  </table>
+
+  <div class="exam-focus">
+    <span class="label">讲义高频考点：群魔殿模型（多水平信息加工认知模型）</span>
+    <p>四种"小鬼"各司其职，后一级取决于前一级的活动结果：</p>
+    <ol>
+      <li><strong>映像小鬼</strong>：登录外部信号的原始映像，提供给特征小鬼</li>
+      <li><strong>特征小鬼</strong>：每一个监视一种刺激的基本特征（竖线、横线等），发现有自己监视的特征就报告给认知小鬼</li>
+      <li><strong>认知小鬼</strong>：分别代表特定符号模型，发现与自己模型相关的特征越多，叫得越响</li>
+      <li><strong>决策小鬼</strong>：选择叫得最响的那个认知小鬼所代表的模型</li>
+    </ol>
+  </div>
+
+  <h3>三、自下而上的加工 vs 自上而下的加工</h3>
+
+  <table>
+    <tr><th></th><th>自下而上加工</th><th>自上而下加工</th></tr>
+    <tr><td><strong>方向</strong></td><td>从小单元组合成大单元（特征→字母→单词）</td><td>受上下文语义背景或已有知识的指导</td></tr>
+    <tr><td><strong>谁控制</strong></td><td>环境控制，加工结果更精确</td><td>经验和知识控制，借助经验快速识别</td></tr>
+    <tr><td><strong>优缺点</strong></td><td>准确但效率低（读一页书需5000+次特征探测）</td><td>高效但可能"只看想看的"</td></tr>
+    <tr><td><strong>典型例子</strong></td><td>逐个字母拼读陌生单词</td><td>阅读"THE CAT"——中间的H/A其实是同一个怪符号，但语境强制你按单词需要来解释</td></tr>
+  </table>
+
+  <div class="key-point"><span class="label">讲义核心考点</span><p>自上而下加工还表现为<strong>过去经验</strong>（导致长度错觉）和<strong>期望</strong>（少女—老妇两可图，先看什么就会在模糊图中看到什么）对知觉结果的影响。</p></div>
+
+  <div class="summary"><h4>第二节 小结</h4><ul>
+    <li>知觉 = 感觉信息的整合 + 赋予意义</li>
+    <li>守恒四大类型：大小、形状、亮度、颜色恒常性</li>
+    <li>三种识别理论：模板匹配（一一比对）、原型匹配（近似）、特征分析（特征表）</li>
+    <li>自下而上 = 环境主导/精确/慢；自上而下 = 经验主导/高效/快</li>
+  </ul></div>
+</div>
+
+<!-- ========== SECTION 3: 注意 ========== -->
+<div class="section" id="sec3">
+  <div class="section-header"><span class="section-number">第三节</span><h2>注意：信息的选择</h2></div>
+
+  <div class="key-point">
+    <span class="label">讲义核心考点 ★必背</span>
+    <p><strong>注意并不是一种独立的心理过程，只是一种心理状态</strong>，是心理活动对一定对象的<strong>指向、选择和集中</strong>。</p>
+    <p>注意具有<strong>选择、保持、调节和监督</strong>心理活动的功能。</p>
+  </div>
+
+  <div class="tip">
+    <span class="label">理解要点：为什么注意不是独立心理过程？</span>
+    <p>注意总是<strong>附着在某一具体心理活动上</strong>：全神贯注听课 = 注意+听觉；默写单词 = 注意+记忆；解题 = 注意+思维；无法摆脱不愉快 = 注意+情绪体验。注意离不开被注意的对象，所以它只是"心理状态"而非独立过程。</p>
+  </div>
+
+  <p>教科书把注意比作<strong>有限的"心理资源"</strong>——就像电表限定了总功率、电脑内存限定了可同时运行的程序数。注意资源有限，人不可能同时做好很多件事。</p>
+
+  <h3>一、无意注意和有意注意</h3>
+
+  <table>
+    <tr><th></th><th>无意注意</th><th>有意注意</th></tr>
+    <tr><td><strong>目的</strong></td><td>无预定目的</td><td>有预定目的</td></tr>
+    <tr><td><strong>意志努力</strong></td><td>不需要</td><td>必要时需要</td></tr>
+    <tr><td><strong>控制源</strong></td><td>刺激本身特点或自身状态</td><td>意识的自觉调节和支配</td></tr>
+    <tr><td><strong>引起条件</strong></td><td>刺激与背景的差异大；刺激强度高；相对运动；与个人需要/情感/兴趣/经验有关</td><td>主动地服从活动任务</td></tr>
+    <tr><td><strong>举例</strong></td><td>宴会上突然有人提到你的名字；夜空中划过的流星；安静的教室里有人摔了笔盒</td><td>即使课堂枯燥也坚持听讲；专心计算题目</td></tr>
+  </table>
+
+  <p>儿童发展：年幼儿童以<strong>无意注意</strong>占优势，上学后逐渐转变为<strong>有意注意</strong>占优势。</p>
+
+  <h3>二、注意的四大品质特点</h3>
+  <table>
+    <tr><th>品质</th><th>定义</th><th>别称</th><th>例</th></tr>
+    <tr><td><strong>注意广度</strong></td><td>同一时间内清楚把握对象的数量</td><td>注意范围（空间特征）</td><td>驾驶员必须"眼观六路耳听八方"</td></tr>
+    <tr><td><strong>注意的稳定性</strong></td><td>较长时间把注意保持在某个对象上</td><td>时间特征</td><td>闭眼注意呼吸，没有训练的话一两分钟就会走神</td></tr>
+    <tr><td><strong>注意的分配</strong></td><td>把注意资源分配到两种或以上活动中</td><td>"一心两用"</td><td>书法家左右手同时写对联上下联</td></tr>
+    <tr><td><strong>注意的转移</strong></td><td>根据任务需要主动把注意从一个对象转移到另一个</td><td>稳定性的反面</td><td>飞行员起飞降落5-6分钟内注意转移200多次</td></tr>
+  </table>
+
+  <h3>三、影响注意品质的因素</h3>
+  <ol>
+    <li><strong>神经系统的特点</strong>（先天的）：兴奋和抑制的强弱、平衡性、转换灵活性</li>
+    <li><strong>后天的训练</strong>（重要甚至决定性）：早期丰富的刺激促进神经发育；但若只提供刺激不重视有目的的控制→可能形成不良注意品质</li>
+    <li><strong>兴趣</strong>：对感兴趣的事物可以保持长时间注意。问题的关键不是怎样培养兴趣，而是怎样<strong>保护</strong>与生俱来的对未知事物的好奇心</li>
+  </ol>
+
+  <div class="key-point"><span class="label">讲义核心考点</span><p>后天的训练是影响注意品质的一个重要甚至是<strong>决定性因素</strong>。</p></div>
+
+  <h3>四、自动化——自动加工 vs 控制加工</h3>
+  <table>
+    <tr><th></th><th>自动加工</th><th>控制加工</th></tr>
+    <tr><td><strong>注意资源</strong></td><td>不需要大量资源，几乎不受资源量限制</td><td>依赖注意资源，受资源量限制</td></tr>
+    <tr><td><strong>加工模式</strong></td><td>固定的、程式化的，难以改变</td><td>灵活的，可随时应对变化</td></tr>
+    <tr><td><strong>优点</strong></td><td>节约资源、速度快</td><td>灵活应变</td></tr>
+    <tr><td><strong>缺点</strong></td><td>不能应对环境变化</td><td>受资源总量限制，不能同时做多项</td></tr>
+    <tr><td><strong>举例</strong></td><td>走路（可边走边阅读/聊天，但过马路必须切换为控制加工）</td><td>解数学题、考驾照时的驾驶</td></tr>
+  </table>
+
+  <div class="summary"><h4>第三节 小结</h4><ul>
+    <li>注意 = 心理状态而非独立过程；功能 = 选择/保持/调节/监督</li>
+    <li>无意注意：无目的无意志努力（刺激差异/强度/运动引起）vs 有意注意：有目的需意志努力</li>
+    <li>四大品质：广度（空间）、稳定性（时间）、分配（一心两用）、转移</li>
+    <li>后天训练是影响注意品质的决定性因素</li>
+    <li>自动加工=习惯化、省资源、不灵活；控制加工=需资源、灵活、受容量限制</li>
+  </ul></div>
+
+  <div class="tip">
+    <span class="label">深入理解：为什么注意是"一切心理活动的固定属性"？</span>
+    <p>这句话是在强调<strong>注意不是独立的心理过程</strong>。你不可能"只注意"而不注意任何东西——注意总得有个对象。听讲=注意+听觉，解题=注意+思维，沉浸在焦虑中=注意+情绪体验。<strong>注意如同影子，永远黏附在一个具体的心理活动上</strong>，所以它不被归类为独立的心理过程，而是伴随一切心理过程的一种<strong>心理状态</strong>（方向性、集中性）。</p>
+  </div>
+</div>
+
+<!-- ========== SECTION 4: 记忆 ========== -->
+<div class="section" id="sec4">
+  <div class="section-header"><span class="section-number">第四节</span><h2>记忆：信息的储存和提取</h2></div>
+
+  <h3>一、记忆的分类（五种分类角度）</h3>
+
+  <div class="key-point"><span class="label">讲义核心考点（高频！）</span><p>记忆可以从多个角度分类，每种分类标准对应不同维度。</p></div>
+
+  <table>
+    <tr><th>分类标准</th><th>类型</th><th>核心特点</th></tr>
+    <tr><td rowspan="4">按内容</td><td><strong>形象记忆</strong></td><td>以感官形象为内容，可为视觉/听觉/触觉/嗅觉等形式</td></tr>
+    <tr><td><strong>情绪记忆</strong></td><td>以情绪体验为内容，是人际情感交流的心理基础。★常考："一遭被蛇咬，三年怕井绳"——记住的不是蛇的形象（不是形象记忆），而是被咬时的<strong>恐惧情绪</strong>（情绪记忆或条件反射）</td></tr>
+    <tr><td><strong>运动记忆</strong></td><td>以动作、技巧为内容，技能学习的必备功能</td></tr>
+    <tr><td><strong>语词逻辑记忆</strong></td><td>以语言符号和抽象思维为内容，人类特有，具有高度理解性和逻辑性</td></tr>
+    <tr><td rowspan="3">按保持时间 ★</td><td><strong>感觉记忆</strong></td><td>保持不超过2秒，信息保留原有物理特性，鲜明但转瞬即逝</td></tr>
+    <tr><td><strong>短时记忆</strong></td><td>保持不超过1分钟，容量7±2个组块；内存级别的加工场所</td></tr>
+    <tr><td><strong>长时记忆</strong></td><td>至少超过1分钟，可终生保持；容量几乎无限；需要复述才能进入</td></tr>
+    <tr><td rowspan="2">按目的</td><td>无意记忆</td><td>无明确目的；儿童无意记忆能力强于有意记忆</td></tr>
+    <tr><td>有意记忆</td><td>有明确目的；成人有目的记忆效果好于随意记忆</td></tr>
+    <tr><td rowspan="2">按理解</td><td>机械记忆</td><td>不问意义，死记硬背；学龄早期比例高</td></tr>
+    <tr><td>逻辑记忆（意义记忆）</td><td>建立在对意义理解基础上；随年龄增长比例增高</td></tr>
+    <tr><td rowspan="2">按意志努力</td><td><strong>外显记忆</strong></td><td>需意志努力回忆（再认/再现）；直接测量（选择题/默写）</td></tr>
+    <tr><td><strong>内隐记忆</strong></td><td>无意识的信息提取；间接测量（如残缺单词补缺实验——被试不曾有意识回忆，但学过单词的补缺概率远高于未学过的）</td></tr>
+  </table>
+
+  <div class="tip">
+    <span class="label">理解要点：再认 vs 再现</span>
+    <p><strong>再认（辨认）</strong>= 学过的材料与陌生材料混在一起，请辨认——选择题就是再认测验。<br>
+    <strong>再现（回忆）</strong>= 没有线索的情况下把学过的材料回忆出来——默写就是再现测验。<br>
+    再认比再现容易（选择题比默写容易）。</p>
+  </div>
+
+  <div class="exam-focus">
+    <span class="label">高频考点：外显记忆 vs 内隐记忆 — 深度辨析</span>
+    <p><strong>外显记忆：</strong>你知道自己在"记"、也在有意识"提取"。考试做选择题和默写填空题，都是外显记忆——你被明确要求"请回忆"，你也知道自己正在回忆。测量方式叫<strong>直接测量</strong>（再认测验/再现测验）。</p>
+    <p><strong>内隐记忆：</strong>你根本没意识到自己在回忆，但过去学过的内容在<strong>无形中</strong>影响了你的判断和表现。阅读理解、自动化的技能、似曾相识的"熟悉感"——都是内隐记忆的表现。测量方式叫<strong>间接测量</strong>：不要求被试回忆，只让他们做某项作业，研究者暗中考量过去经验对表现的影响。</p>
+    <p><strong>教科书经典案例：</strong>遇见一个人，觉得"好像在哪儿见过"，仔细分析却确定不可能认识——那是什么让你产生似曾相识的亲切感？就是<strong>内隐记忆</strong>：过去某个类似面孔的经验以<strong>无意识</strong>的方式影响了你的知觉，你想不起来了，但这个影响确实存在。</p>
+    <p><strong>教学启示：</strong>学生考试能答对的题（外显记忆好），不等于真正理解了。真正内化了的知识/技能是不需要"想"就能自动用出来的——那是内隐记忆在发挥作用。</p>
+  </div>
+
+  <h3>二、记忆系统（感觉记忆→短时记忆→长时记忆）</h3>
+
+  <table>
+    <tr><th></th><th>感觉记忆（瞬时记忆/感觉登记）</th><th>短时记忆</th><th>长时记忆</th></tr>
+    <tr><td><strong>保持时间</strong></td><td>不超过2秒</td><td>不超过1分钟</td><td>1分钟以上→终生</td></tr>
+    <tr><td><strong>编码形式</strong></td><td>保留原有物理特性，形象鲜明</td><td>转化为言语听觉形式（不再保留物理特性）</td><td>语义编码 + 表象编码</td></tr>
+    <tr><td><strong>容量</strong></td><td>约9个字母（视觉）</td><td>4-5个符号 → 组块后可扩至<strong>7±2个组块</strong></td><td>几乎无限</td></tr>
+    <tr><td><strong>意识水平</strong></td><td>无意识水平</td><td>有意识</td><td>相关信息可提取到意识</td></tr>
+    <tr><td><strong>进入条件</strong></td><td>—</td><td>感觉信息<strong>受到注意</strong></td><td>短时记忆经过<strong>复述</strong>（或强烈情绪体验/兴趣直接进入）</td></tr>
+    <tr><td><strong>电脑类比</strong></td><td>—</td><td>计算机<strong>内存</strong></td><td>计算机<strong>硬盘</strong></td></tr>
+  </table>
+
+  <div class="exam-focus">
+    <span class="label">讲义高频考点：组块是短时记忆"自我内存升级"的手段</span>
+    <p>短时记忆容量为<strong>7±2个组块</strong>（意义单位）。举个栗子：俄国人名"弗拉基米尔·伊里奇·列宁"按汉语习惯每个译音当作一个组块，很难记；但俄国人把每个名当整体（一个组块），轻松容纳。</p>
+  </div>
+
+  <div class="tip">
+    <span class="label">深入理解："短时记忆中信息不再保留原有的物理特性"是什么意思？</span>
+    <p>把感觉记忆和短时记忆对比，差异一目了然：<br><strong>感觉记忆中的信息 = "原生态"——</strong>视觉图像还像照片一样、听觉声音还像录音一样。你看了一眼黑板上的公式，合眼的那一瞬间脑子里还残留了不到1秒的"视觉后像"——那就是物理特性还在。<br><strong>短时记忆中的信息 = 已经被"翻译"过了——</strong>教科书说"很多人认为它们被转换成了<strong>言语听觉的形式</strong>"。刚才那个公式，两秒后你脑子里不再是画面的样子，而是内心默念"F等于mA"的声音。物理形态的视觉图像已经被转换成抽象的<strong>言语编码</strong>了。</p>
+    <p><strong>换个理解方式：</strong>感觉记忆是"照相机"拍下来的（原汁原味）；短时记忆是"口述转述"的（换了一种语言）。这就是"不再保留原有物理特性"的含义——信息的形式变了，从感官的变成符号的。</p>
+  </div>
+
+  <h3>三、长时记忆中信息的组织</h3>
+  <ul>
+    <li><strong>命题/概念网络方式：</strong>概念是结点，概念间的从属关系连接结点形成网络。提取信息时激活扩散：想起一个人的一部分，不由自主想起其他相关信息。</li>
+    <li><strong>表象编码方式：</strong>感知过的事物不在面前时，在头脑中再现的形象叫<strong>表象</strong>。具有直观性（保留了感知特征但模糊）和概括性（表现一类事物的一般特点）。形象记忆、情绪记忆、运动记忆都以表象方式编码。</li>
+  </ul>
+
+  <h3>四、长时记忆信息的遗忘</h3>
+
+  <h4>（一）三种遗忘理论</h4>
+  <table>
+    <tr><th>理论</th><th>观点</th><th>核心比喻</th></tr>
+    <tr><td><strong>消退说</strong></td><td>记忆如石刻印迹，随时间流逝逐渐变浅，最终消失</td><td>石头上的刻痕风化</td></tr>
+    <tr><td><strong>干扰说</strong></td><td>遗忘信息并未真正消失，而是由于其他信息干扰或疲劳、情绪紧张等导致<strong>提取困难</strong></td><td>图书馆的书没按编号上架，找不到但不等于丢了</td></tr>
+    <tr><td><strong>抑制说</strong>（弗洛伊德）</td><td>因经验与无意识欲望/冲动有关而<strong>受到意识的压抑</strong>，主动导致遗忘</td><td>不想回忆痛苦的事</td></tr>
+  </table>
+  <p><strong>干扰说 vs 抑制说共同点：</strong>都认为遗忘的信息仍存在，只是提取困难。<strong>区别：</strong>干扰说的原因都是客观的，抑制说认为遗忘是主动的、受动机驱使的。</p>
+
+  <h4>（二）遗忘规律</h4>
+
+  <div class="key-point"><span class="label">讲义核心考点：遗忘的质和量两方面</span></div>
+
+  <p><strong>质的规律：</strong></p>
+  <ul>
+    <li><strong>遗忘的选择性：</strong>每个人遗忘的内容不同——同样一节课，不同学生记住的内容不同</li>
+    <li><strong>遗忘的重构性：</strong>记忆不是冷藏保存，而是经过组织编码的。传播中"拷贝走样"就是重构性的表现</li>
+  </ul>
+
+  <p><strong>量的规律（高频考点）：</strong></p>
+  <table>
+    <tr><th>规律</th><th>内容</th></tr>
+    <tr><td><strong>艾宾浩斯曲线 ★</strong></td><td>遗忘进程不均匀：识记后最初时间内遗忘<strong>很快</strong>，后来逐渐<strong>变慢</strong>，到一定时候几乎不再发展——<strong>先快后慢</strong></td></tr>
+    <tr><td><strong>前摄抑制</strong></td><td><strong>前面</strong>学习的内容对<strong>后面</strong>学习内容造成的干扰性遗忘。如先学拼音再学英文字母，会严重干扰</td></tr>
+    <tr><td><strong>倒摄抑制</strong></td><td><strong>后面</strong>学习的内容对<strong>前面</strong>学习内容的干扰；学习间隙插入休息可减小倒摄抑制</td></tr>
+    <tr><td><strong>系列位置效应</strong></td><td>识记系列材料时，<strong>首尾容易记住，中间部分最容易遗忘</strong>；材料内容越相似，抑制效果越大</td></tr>
+  </table>
+
+  <div class="summary"><h4>第四节 小结</h4><ul>
+    <li>五种分类角度：内容/时间/目的/理解/意志努力；按时间三类型最核心（感觉→短时→长时）</li>
+    <li>短时记忆=内存（7±2组块），长时记忆=硬盘（容量无限）</li>
+    <li>三种遗忘理论：消退（风化）、干扰（找不到）、抑制（不想找）；干扰说和抑制说的区分是高频考点</li>
+    <li>艾宾浩斯曲线=先快后慢；前摄抑制=前扰后；倒摄抑制=后扰前；系列位置效应=两头好记中间难</li>
+  </ul></div>
+</div>
+
+<!-- ========== SECTION 5: 思维 ========== -->
+<div class="section" id="sec5">
+  <div class="section-header"><span class="section-number">第五节</span><h2>思维：信息的演算</h2></div>
+
+  <div class="definition">
+    <span class="label">定义：</span>思维是大脑对客观事物<strong>概括的和间接的</strong>反映。概括性 = 了解一类事物的共同性和普遍性质；间接性 = 借助一定媒介和知识经验认识本质和规律。它是心理活动最复杂的形式，也是认识过程的最高级阶段。
+  </div>
+
+  <h3>一、思维的分类（四种角度）</h3>
+  <table>
+    <tr><th>分类标准</th><th>类型</th><th>核心特点</th></tr>
+    <tr><td rowspan="3">按<strong>载体</strong></td><td><strong>动作思维</strong>（实践思维）</td><td>边做边想（舞蹈演员边摆造型边思考），儿童主要思维形式</td></tr>
+    <tr><td><strong>形象思维</strong></td><td>借助表象进行分析、综合、抽象、概括</td></tr>
+    <tr><td><strong>语词逻辑思维</strong></td><td>以符号、语词为中介的思维方式</td></tr>
+    <tr><td rowspan="2">按<strong>结果获得形式</strong></td><td><strong>直觉思维</strong>（无意识思维）</td><td>不经清晰的逻辑步骤，突然领悟——顿悟（insight）</td></tr>
+    <tr><td><strong>分析思维</strong>（有意识思维）</td><td>严谨周密的逻辑推导，得出合乎逻辑的结论</td></tr>
+    <tr><td rowspan="2">按<strong>运行方向</strong></td><td><strong>发散性思维</strong></td><td>从同一起点出发沿不同方向寻求多种解答（一题多解）</td></tr>
+    <tr><td><strong>聚敛性思维</strong></td><td>从不同起点出发寻求共同的解决方法</td></tr>
+    <tr><td rowspan="2">按<strong>结果新颖性</strong></td><td><strong>受制思维</strong></td><td>运用已有知识经验，按已有方案解决问题</td></tr>
+    <tr><td><strong>创造思维</strong></td><td>重新组织已有知识，提出新方案——<strong>流畅性、灵活性、原创性</strong>是三个衡量指标</td></tr>
+  </table>
+
+  <div class="tip">
+    <span class="label">深入理解："思维是借助语言、表象或动作实现的"</span>
+    <p>这句话说的是思维的<strong>载体</strong>——思维不是凭空在脑子里转的，它总得借助某种"工具"才能操作。教科书据此把思维分为三种：<br>
+    <strong>借助语言</strong>→ 语词逻辑思维：做数学证明、写论文、分析法规——脑子里用概念、判断、推理<br>
+    <strong>借助表象</strong>→ 形象思维：建筑师在脑中构想房子外观、你回忆老家院子的样子<br>
+    <strong>借助动作</strong>→ 动作思维（实践思维）：舞蹈演员边摆姿势边设计造型、修机器时边拆边想</p>
+  </div>
+
+  <div class="exam-focus">
+    <span class="label">创造思维三大特点详解 ★</span>
+    <p><strong>流畅性</strong>——短时间产生大量想法。问"砖块有多少种用途？"，能一口气说出很多。<br>
+    <strong>灵活性</strong>——想法的种类/角度多样化，不局限一个领域。砖块用途分为建筑类、武器类、工艺品类、测量工具类等不同类别。<br>
+    <strong>原创性</strong>——想法新颖、不寻常。提出"砖块当行为艺术作品"这类与众不同的答案。<br>
+    <strong>为什么流畅性排在第一？</strong>没有数量就没有质量。如果你只能想出1-2个方案，多半是老套路，谈不上创造。只有在大量想法中才可能涌现出灵活的、原创的。流畅性是<strong>基础</strong>，灵活性和原创性是在此基础上的提升。</p>
+  </div>
+
+  <h3>二、类别和概念的学习</h3>
+  <div class="key-point">
+    <span class="label">讲义核心考点：分类是最基本的思维活动，最基本的形式是概念 ★</span>
+    <p>为什么分类是最基本的思维活动？因为每一刻你都在<strong>自动分类</strong>——看到一个人判断"熟人还是陌生人"、拿起一本书判断"教材还是消遣读物"、听到一个提议判断"合理还是荒谬"。<strong>事物的类别决定了你对它的态度和反应。</strong>如果你不能分类，每个事物都将是一个全新的谜题，大脑将完全无法运转。</p>
+    <p>为什么概念是最基本的形式？<strong>概念（concept）就是分类的标签。</strong>"鸟""教材""考试"都是概念。你把世界里无穷无尽的事物归入有限的概念中，大脑才能高效运转。在长时记忆的意义网络中，<strong>概念是结点</strong>——"鸟"连接着"麻雀""羽毛""会飞"——整个知识网络是靠概念串起来的。没有概念，就没有思维；每一个分类本质上都是一个概念的运用。</p>
+  </div>
+  <p>概念形成与分类的基本原理相同。心理学家用<strong>人工概念</strong>（人为制作的符号图形）研究概念形成——被试通过不断提问获得反馈，形成假设→验证假设→形成正确概念。高效策略：先提假设再验证；低效策略：逐个试完再下结论。</p>
+
+  <h3>三、问题解决的思维方式</h3>
+  <table>
+    <tr><th>方式</th><th>特点</th><th>适用场景</th></tr>
+    <tr><td><strong>尝试错误</strong></td><td>盲目尝试，淘汰错误，偶然成功，缺乏可控性</td><td>难度大、无头绪的问题</td></tr>
+    <tr><td><strong>顿悟</strong></td><td>突然领悟问题实质，但<strong>缺乏可控性</strong>，不能有目的地趋向答案</td><td>不是有效的常规手段</td></tr>
+    <tr><td><strong>类比</strong></td><td>把待解问题比作熟悉的问题进行推测；关键是找到最恰当的相关问题</td><td>科学突破中常重要</td></tr>
+    <tr><td><strong>启发式</strong>（手段-目的分析）</td><td>找出初始状态与目标状态的差距→制定缩小差距的子目标→选定算子→实现子目标；也可用<strong>反推法</strong>从目标出发向起点推导</td><td>复杂问题的系统解决方法</td></tr>
+  </table>
+
+  <div class="exam-focus">
+    <span class="label">讲义高频考点：问题解决的阶段</span>
+    <p>观点一：准备期→<strong>潜伏期</strong>→<strong>明朗期</strong>→验证期<br>观点二：表述问题→寻找可行的解决方法→作出决策</p>
+  </div>
+
+  <h3>四、影响问题解决的五大因素</h3>
+  <table>
+    <tr><th>因素</th><th>解释</th></tr>
+    <tr><td><strong>1. 问题呈现方式</strong></td><td>呈现方式如果模糊了已知条件与解决途径间的联系，会阻碍解决。一样的数据，换了视角呈现，立刻就简单了。</td></tr>
+    <tr><td><strong>2. 多余刺激干扰</strong></td><td>现实问题错综复杂，必须<strong>排除无关因素</strong>才能看清本质</td></tr>
+    <tr><td><strong>3. 定势 ★</strong></td><td>凭借以前的知识经验<strong>惯性看待</strong>新问题。定势有时有助于快速解决，但有时使人"用老眼光看新问题"，思维僵化缺乏灵活性</td></tr>
+    <tr><td><strong>4. 功能固着 ★</strong></td><td>习惯了一件物品的某种用途后，很难看出它的其他用途——蜡烛问题：想不到纸盒也可以当烛台</td></tr>
+    <tr><td><strong>5. 动机的作用</strong></td><td>动机过弱→不想解决；动机过强→情绪过度紧张，无法冷静分析。解复杂题目以<strong>中等偏低</strong>的兴奋水平为佳（考试太紧张反而犯低级错误）。<strong>Yerkes-Dodson定律：</strong>简单肢体任务→高兴奋有利(百米赛跑)；复杂团体任务→中等兴奋(篮球)；复杂认知任务→中等偏低兴奋(考试解题)——<strong>任务越复杂，最佳兴奋水平越低</strong>。</td></tr>
+  </table>
+
+  <div class="exam-focus">
+    <span class="label">概念辨析：顺向/逆向 × 正/负迁移（+ 原型启发）</span>
+    <p><strong>迁移（transfer）</strong> = 一种学习对另一种学习的影响。按两个维度交叉：</p>
+    <table>
+      <tr><th></th><th>正迁移（帮助新学习）</th><th>负迁移（干扰新学习）</th></tr>
+      <tr><td><strong>顺向迁移</strong>（旧→新）</td><td>学了数学逻辑有助于学物理</td><td><strong>= 前摄抑制</strong>——先学的内容干扰后面的。如用了多年某个操作习惯，换新软件总按错</td></tr>
+      <tr><td><strong>逆向迁移</strong>（新→旧）</td><td>新知识帮你重新理解旧知识</td><td><strong>= 倒摄抑制</strong>——新学的内容干扰前面的。如新背的口诀把背过的东西弄混了</td></tr>
+    </table>
+    <p><strong>原型启发：</strong>看到某个事物（原型/模型）受到了启发，解决了当前难题——这是<strong>正迁移</strong>的一种。鲁班被带齿草叶割伤后发明了锯子——草叶是原型。原型启发在科学发明和创造思维中非常常见。</p>
+  </div>
+
+  <div class="exam-focus">
+    <span class="label">易混概念辨析：原型启发 — 功能固着 — 负向迁移 — 定势</span>
+    <table>
+      <tr><th>概念</th><th>一句话</th><th>归属领域</th><th>经典例子</th></tr>
+      <tr><td><strong>原型启发</strong></td><td>看到某个事物受启发，解决当前问题</td><td>创造思维/问题解决（促进性的）</td><td>鲁班被草叶割伤→发明锯子（草叶=原型）</td></tr>
+      <tr><td><strong>功能固着</strong></td><td>习惯物品一种用途后看不见其他用途</td><td>问题解决障碍（对"物"的认知固化）</td><td>纸盒只能装东西，想不到当烛台</td></tr>
+      <tr><td><strong>负向迁移</strong></td><td>先前学习干扰新的学习</td><td>学习迁移（对"学习"的干扰）</td><td>学了A操作习惯后总用不惯B操作</td></tr>
+      <tr><td><strong>定势</strong></td><td>用老经验惯性看待新问题，思维固化</td><td>问题解决障碍（对"思路"的认知僵化）</td><td>做了多题B-A-2C，后面明明有更简单方法仍选那套</td></tr>
+    </table>
+    <p><strong>辨析关键：</strong>① 原型启发和其余三个<strong>本质不同</strong>——它是<strong>帮助</strong>你的，不是阻碍你的。② 功能固着=你对"物品功能"的认识卡住了；定势=你对"思维方法"的认识卡住了——一个作用于物，一个作用于思路。③ 负向迁移发生在<strong>学习</strong>层面（A学习→影响B学习）；定势发生在<strong>解决</strong>层面（做题惯性），两者的关系是：<strong>定势可以是负向迁移的一种表现</strong>。</p>
+  </div>
+
+  <div class="summary"><h4>第五节 小结</h4><ul>
+    <li>思维 = 概括的 + 间接的反映，是认识过程的最高级阶段</li>
+    <li>四种分类角度：载体/结果形式/方向/新颖性</li>
+    <li>问题解决四方式：尝试错误（瞎试）、顿悟（突然）、类比（比作熟悉的）、启发式（手段-目的分析+反推）</li>
+    <li>五大影响因素：呈现方式、多余干扰、定势、功能固着、动机——其中定势和功能固着是高频考题</li>
+  </ul></div>
+</div>
+
+<!-- ========== FINAL SUMMARY ========== -->
+<div class="final-summary" id="summary">
+  <h2>第二章备考要点速览</h2>
+
+  <h3>一、必背定义与概念</h3>
+  <ul>
+    <li><span class="label">感觉：</span>信息的输入和登录；感受器=收集信息+能量转换</li>
+    <li><span class="label">绝对阈限：</span>刚能引起感觉的最小刺激强度</li>
+    <li><span class="label">差别阈限：</span>刚能引起差别感觉的最小差异强度</li>
+    <li><span class="label">感觉适应：</span>长时间刺激→感受性变化（大多下降）</li>
+    <li><span class="label">知觉：</span>信息的识别；守恒=知觉组织的核心形式</li>
+    <li><span class="label">注意：</span>不是独立心理过程，只是心理状态（指向/选择/集中）</li>
+    <li><span class="label">记忆：</span>信息的储存和提取；短时记忆7±2组块</li>
+    <li><span class="label">思维：</span>概括的和间接的反映，认识过程最高级阶段</li>
+  </ul>
+
+  <h3>二、高频考点清单</h3>
+  <ul>
+    <li>★ 感受器的两大功能（收集信息 + 能量转换）和适宜刺激</li>
+    <li>★ 绝对阈限 vs 差别阈限的定义和例子</li>
+    <li>★ 感觉适应（通常感受性下降）vs 暗适应（感受性提高）</li>
+    <li>★ 感觉剥夺 → 心理功能紊乱</li>
+    <li>★ 知觉的恒常性（大小/形状/亮度/颜色）</li>
+    <li>★ 三种对象识别理论（模板匹配/原型匹配/特征分析）</li>
+    <li>★ 群魔殿模型（四种小鬼及其职能）</li>
+    <li>★ 自下而上 vs 自上而下的加工</li>
+    <li>★ 注意的四大品质（广度/稳定性/分配/转移）</li>
+    <li>★ 无意注意 vs 有意注意</li>
+    <li>★ 自动加工 vs 控制加工</li>
+    <li>★ 记忆的五种分类方式（特别是按时间三分法）</li>
+    <li>★ 记忆系统三阶段（感觉→短时→长时，类比内存/硬盘）</li>
+    <li>★ 短时记忆容量7±2个组块</li>
+    <li>★ 三种遗忘理论（消退/干扰/抑制）及干扰说vs抑制说的区别</li>
+    <li>★ 艾宾浩斯遗忘曲线（先快后慢）</li>
+    <li>★ 前摄抑制/倒摄抑制/系列位置效应</li>
+    <li>★ 思维的四种分类</li>
+    <li>★ 问题解决方式（尝试错误/顿悟/类比/启发式）</li>
+    <li>★ 五大影响问题解决因素（定势/功能固着是重点）</li>
+  </ul>
+
+  <h3>三、易混知识点辨析</h3>
+  <ul>
+    <li><span class="label">感觉 vs 知觉：</span>感觉=个别特征；知觉=整合+赋予意义</li>
+    <li><span class="label">自下而上 vs 自上而下：</span>前者环境控制精确但慢，后者经验驱动高效但偏</li>
+    <li><span class="label">干扰说 vs 抑制说：</span>都承认信息还在只是提取困难；干扰=客观，抑制=主动动机</li>
+    <li><span class="label">定势 vs 功能固着：</span>定势=思维惯性；功能固着=物品功能认知固化</li>
+    <li><span class="label">前摄抑制 vs 倒摄抑制：</span>前→后 vs 后→前</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p>心理学概论 · 第二章 心理过程 | 基于孙时进主编教材 + 核心考点讲义整合编写</p>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var S=5; // short skip seconds
+  var L=300; // long press threshold ms
+  var toastTimer=null;
+  var longTimer=null;
+  var isLong=false;
+  var rewindId=null;
+  var currentKey=null;
+
+  function toast(m,isSpeed){
+    var o=document.querySelector('.kb-toast'); if(o)o.remove(); if(toastTimer)clearTimeout(toastTimer);
+    var d=document.createElement('div'); d.className='kb-toast'; d.textContent=m;
+    d.style.cssText='position:fixed;top:25%;left:50%;transform:translate(-50%,0);background:'+(isSpeed?'rgba(234,88,12,0.85)':'rgba(0,0,0,0.75)')+';color:#fff;font-size:1.1rem;padding:12px 28px;border-radius:24px;z-index:9999;pointer-events:none;font-family:-apple-system,"PingFang SC",sans-serif;animation:kb-in 0.3s ease-out';
+    document.body.appendChild(d);
+    toastTimer=setTimeout(function(){d.style.animation='kb-out 0.3s ease-in forwards';setTimeout(function(){d.remove()},300)},isSpeed?1200:700);
+  }
+
+  var styleEl=document.createElement('style');
+  styleEl.textContent='@keyframes kb-in{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}@keyframes kb-out{from{opacity:1}to{opacity:0}}';
+  document.head.appendChild(styleEl);
+
+  function cleanup(){
+    if(longTimer){clearTimeout(longTimer);longTimer=null;}
+    if(rewindId){clearInterval(rewindId);rewindId=null;}
+    var a=document.querySelector('audio');
+    if(a&&a.playbackRate!==1)a.playbackRate=1;
+    isLong=false;
+    currentKey=null;
+  }
+
+  document.addEventListener('keydown',function(e){
+    if(e.key===' '||e.key==='Spacebar'){
+      var a=document.querySelector('audio');if(!a)return;
+      e.preventDefault();
+      if(a.paused){a.play();toast('\u25B6 播放');}
+      else{a.pause();toast('\u23F8 暂停');}
+      return;
+    }
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+    if(e.repeat)return;
+    var a=document.querySelector('audio');if(!a)return;
+    if(a.paused||a.ended)return;
+    e.preventDefault();
+    currentKey=e.key;
+
+    longTimer=setTimeout(function(){
+      isLong=true;
+      if(currentKey==='ArrowRight'){
+        a.playbackRate=2;
+        toast('\u23E9 2x 快进中',true);
+      }else{
+        toast('\u23EA 2x 倒退中',true);
+        rewindId=setInterval(function(){
+          a.currentTime=Math.max(0,a.currentTime-0.16);
+        },80);
+      }
+    },L);
+  });
+
+  document.addEventListener('keyup',function(e){
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+    var a=document.querySelector('audio');if(!a)return cleanup();
+
+    if(isLong){
+      a.playbackRate=1;
+      if(rewindId){clearInterval(rewindId);rewindId=null;}
+      toast('恢复原速',true);
+      cleanup();
+    }else{
+      clearTimeout(longTimer);longTimer=null;
+      if(e.key==='ArrowLeft'){
+        a.currentTime=Math.max(0,a.currentTime-S);
+        toast('\u23EA 后退 5s');
+      }else{
+        a.currentTime=Math.min(a.duration||1e9,a.currentTime+S);
+        toast('\u23E9 前进 5s');
+      }
+    }
+    currentKey=null;
+  });
+
+  window.addEventListener('blur',cleanup);
+  var a0=document.querySelector('audio');
+  if(a0)a0.addEventListener('ended',cleanup);
+})();
+</script>
+</body>
+</html>
