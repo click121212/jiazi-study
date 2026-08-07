@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>心理学概论 · 第一章 导论 — 学习讲义</title>
+<style>
+  :root {
+    --primary: #2563eb;
+    --primary-light: #dbeafe;
+    --accent: #dc2626;
+    --accent-light: #fee2e2;
+    --success: #16a34a;
+    --success-light: #dcfce7;
+    --warning: #d97706;
+    --warning-light: #fef3c7;
+    --bg: #fafafa;
+    --card-bg: #ffffff;
+    --text: #1f2937;
+    --text-light: #6b7280;
+    --border: #e5e7eb;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+    padding: 0;
+  }
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 3px solid var(--primary);
+  }
+  .header h1 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+  }
+  .header .subtitle {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin-bottom: 16px;
+  }
+  .header .meta {
+    display: inline-flex;
+    gap: 16px;
+    font-size: 0.85rem;
+    color: var(--text-light);
+    background: var(--primary-light);
+    padding: 8px 20px;
+    border-radius: 20px;
+  }
+
+  /* Table of Contents */
+  .toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .toc h3 {
+    font-size: 1.1rem;
+    color: var(--primary);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .toc ul { list-style: none; }
+  .toc li {
+    padding: 6px 0;
+    font-size: 0.95rem;
+  }
+  .toc li a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .toc li a:hover { color: var(--primary); }
+  .toc .indent { padding-left: 24px; color: var(--text-light); }
+  .toc .badge {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 6px;
+  }
+
+  /* Section styling */
+  .section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 32px 36px;
+    margin-bottom: 32px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  .section-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+  .section-number {
+    display: inline-block;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .section h2 {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .section h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-top: 28px;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    border-left: 4px solid var(--primary);
+  }
+  .section h4 {
+    font-size: 1.05rem;
+    color: var(--text);
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  /* Key point boxes */
+  .key-point {
+    background: var(--accent-light);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .key-point .label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .key-point p { font-size: 0.95rem; }
+
+  /* Understanding tips */
+  .tip {
+    background: var(--success-light);
+    border-left: 4px solid var(--success);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .tip .label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--success);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  /* Exam focus */
+  .exam-focus {
+    background: var(--warning-light);
+    border: 2px solid var(--warning);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+  }
+  .exam-focus .label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--warning);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  /* Definition box */
+  .definition {
+    background: var(--primary-light);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.95rem;
+  }
+  .definition .label {
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 0.9rem;
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    text-align: left;
+  }
+  th {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 600;
+  }
+  tr:nth-child(even) { background: #f9fafb; }
+
+  /* Summary box */
+  .summary {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border: 1px solid #bae6fd;
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 24px 0;
+  }
+  .summary h4 {
+    color: #0369a1;
+    margin-bottom: 12px;
+  }
+  .summary ul { padding-left: 20px; }
+  .summary li { margin-bottom: 6px; font-size: 0.92rem; }
+
+  /* Comparison card */
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+  }
+  .comparison-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .comparison-card.theory { border-top: 4px solid var(--primary); }
+  .comparison-card.applied { border-top: 4px solid var(--success); }
+  .comparison-card h5 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+  .comparison-card p { font-size: 0.88rem; color: var(--text-light); }
+
+  /* School card */
+  .school-card {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    background: #fafbfc;
+  }
+  .school-card .school-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .school-card .school-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .school-card .school-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  .school-card .school-meta {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+
+  /* Text styling */
+  p { margin-bottom: 12px; font-size: 0.95rem; }
+  .highlight { background: #fffde7; padding: 2px 4px; border-radius: 2px; }
+  strong { color: var(--text); }
+  ul, ol { padding-left: 24px; margin-bottom: 12px; }
+  ul li, ol li { font-size: 0.95rem; margin-bottom: 4px; }
+
+  /* Timeline */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 20px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+  .timeline-item {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 2px var(--primary);
+  }
+  .timeline-item .time {
+    font-size: 0.82rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+  .timeline-item .content {
+    font-size: 0.93rem;
+  }
+
+  /* Final summary */
+  .final-summary {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin: 40px 0 20px;
+  }
+  .final-summary h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+  }
+  .final-summary h3 {
+    color: #bfdbfe;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    border-left: none;
+    padding-left: 0;
+  }
+  .final-summary ul { padding-left: 20px; }
+  .final-summary li {
+    color: #e0e7ff;
+    font-size: 0.92rem;
+    margin-bottom: 6px;
+  }
+  .final-summary .label { color: #fbbf24; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.82rem;
+    padding: 24px 0;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+
+  /* Print */
+  @media print {
+    body { background: #fff; }
+    .section { break-inside: avoid; box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ==================== HEADER ==================== -->
+<div class="header">
+  <h1>心理学概论</h1>
+  <p class="subtitle">第一章 导论 — 学习讲义</p>
+  <div class="meta">
+    <span>教材：孙时进 主编《心理学概论》</span>
+    <span>|</span>
+    <span>讲义：核心考点讲义</span>
+  </div>
+</div>
+
+<!-- ==================== AUDIO REVIEW ==================== -->
+<div style="background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px 28px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
+    <span style="font-size: 1.3rem;">🎧</span>
+    <span style="font-weight: 600; font-size: 1rem; color: var(--primary);">本章复习语音讲解（晓晓 · AI 语音）</span>
+  </div>
+  <audio controls preload="none" style="width: 100%; border-radius: 6px;" src="音频/chapter1_review.mp3"></audio>
+  <p style="font-size: 0.82rem; color: var(--text-light); margin-top: 10px; margin-bottom: 0;">约 7 分钟 · 全章要点串联讲解 · 播放中按 ← → 方向键可后退/前进 5 秒</p>
+  <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--border);">
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">空格 播放/暂停</span>
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">→ 单击 快进5s</span>
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">→ 长按 2x快进</span>
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">← 单击 后退5s</span>
+    <span style="font-size: 0.75rem; color: var(--text-light); background: var(--bg); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px;">← 长按 2x倒退</span>
+  </div>
+</div>
+
+<!-- ==================== TOC ==================== -->
+<div class="toc">
+  <h3>本章导航</h3>
+  <ul>
+    <li><a href="#sec1"><span class="badge">第一节</span>心理学的研究领域和学科性质</a></li>
+    <li class="indent"><a href="#sec1-1">一、心理学的研究领域（理论心理学 vs 应用心理学）</a></li>
+    <li class="indent"><a href="#sec1-2">二、心理学的学科性质（综合交叉学科）</a></li>
+    <li class="indent"><a href="#sec1-3">三、学习和研究心理学的意义</a></li>
+    <li><a href="#sec2"><span class="badge">第二节</span>心理学的研究方法</a></li>
+    <li class="indent"><a href="#sec2-1">一、一般方法论和研究原则</a></li>
+    <li class="indent"><a href="#sec2-2">二、具体研究方法（观察法/实验法/个案/调查/内省）</a></li>
+    <li class="indent"><a href="#sec2-obs-vs-exp">☆ 人为场所情景观察 vs 实验法</a></li>
+    <li class="indent"><a href="#sec2-3">三、常用研究技术和手段</a></li>
+    <li class="indent"><a href="#sec2-4">四、心理学研究中的伦理问题</a></li>
+    <li><a href="#sec3"><span class="badge">第三节</span>心理学的发展历史与流派</a></li>
+    <li class="indent"><a href="#sec3-1">一、心理学的发展历史（孕育 → 确立）</a></li>
+    <li class="indent"><a href="#sec3-1-descartes">☆ 笛卡尔专题（我思故我在 · 反射 · 心身二元论）</a></li>
+    <li class="indent"><a href="#sec3-2">二、心理学的主要流派（四大势力）</a></li>
+    <li class="indent"><a href="#sec3-3">三、心理学的研究现状和发展趋势</a></li>
+    <li><a href="#summary"><span class="badge">总结</span>备考要点速览</a></li>
+  </ul>
+</div>
+
+<!-- ==================== SECTION 1 ==================== -->
+<div class="section" id="sec1">
+  <div class="section-header">
+    <span class="section-number">第一节</span>
+    <h2>心理学的研究领域和学科性质</h2>
+  </div>
+
+  <div class="key-point">
+    <span class="label">讲义核心考点</span>
+    <p><strong>心理学的定义：</strong>心理学是研究心理现象及其规律的科学。心理是人脑的机能，是人脑对客观现实的主观反映。</p>
+  </div>
+
+  <div class="tip">
+    <span class="label">理解要点</span>
+    <p>这个定义包含三个关键要素：① <strong>人脑的机能</strong>——说明心理的物质基础是脑，而非心脏或灵魂；② <strong>客观现实的反映</strong>——说明心理的内容来源于外部世界，不是凭空产生的；③ <strong>主观反映</strong>——说明这种反映不是照镜子般的机械复制，而是经过个体主观加工的、带有个人色彩的反映。同一场电影，有人感动落泪，有人觉得无聊——这就是"主观"二字的含义。</p>
+  </div>
+
+  <!-- 1.1 研究领域 -->
+  <h3 id="sec1-1">一、心理学的研究领域</h3>
+
+  <p>心理学既是揭示心理现象及其本质和规律的<strong>基础性理论科学</strong>，又是在社会生活中有着很强应用价值的<strong>应用科学</strong>。根据研究目的是建立系统理论还是实际应用，将心理学分为两大领域：</p>
+
+  <div class="comparison-grid">
+    <div class="comparison-card theory">
+      <h5 style="color: var(--primary);">理论心理学（体系心理学）</h5>
+      <p>探讨人或动物的行为和心理变化的<strong>原理和规律</strong></p>
+    </div>
+    <div class="comparison-card applied">
+      <h5 style="color: var(--success);">应用心理学</h5>
+      <p>研究心理学在现实社会和生活中的<strong>实际应用</strong></p>
+    </div>
+  </div>
+
+  <h4>（一）理论心理学的主要分支</h4>
+  <table>
+    <tr><th>分支</th><th>核心研究对象</th><th>关键要点</th></tr>
+    <tr><td><strong>普通心理学</strong></td><td>心理现象的一般规律</td><td>又称<strong>标准心理学</strong>，是心理学的<strong>主干</strong>，占特殊地位。研究正常成人的心理活动。将心理现象分为<strong>心理过程</strong>（知、情、意）与<strong>个性心理</strong>（个性倾向性 + 个性心理特征）</td></tr>
+    <tr><td><strong>社会心理学</strong></td><td>个体和群体的社会心理现象</td><td>心理学与社会学的<strong>交叉学科</strong>。个体层面：人际知觉、顺从等；群体层面：群体凝聚力、群体决策等</td></tr>
+    <tr><td><strong>发展心理学</strong></td><td>个体心理发生、发展规律</td><td>按年龄分为幼儿、儿童、少年、青年、成年、老年心理学</td></tr>
+    <tr><td><strong>生理心理学</strong></td><td>心理现象的生理过程</td><td>又称生物心理学、心理生物学或<strong>行为神经科学</strong>。以脑内生理事件解释心理现象</td></tr>
+    <tr><td><strong>比较心理学</strong></td><td>动物行为进化</td><td>研究不同进化阶段动物的行为特点，目的在于更好了解人类本身</td></tr>
+    <tr><td><strong>实验心理学</strong></td><td>实验室控制条件下的心理和行为</td><td>更多是心理学的一种<strong>方法学</strong>，不局限于某一领域</td></tr>
+  </table>
+  <p style="font-size: 0.9rem; color: var(--text-light);">此外，认知心理学、人格心理学、变态心理学等也属理论心理学范畴。</p>
+
+  <div class="tip">
+    <span class="label">理解要点：普通心理学中的心理现象分类</span>
+    <p>普通心理学将心理现象分为两大方面，这是整个心理学知识体系的基础框架：</p>
+    <ul>
+      <li><strong>心理过程</strong>（动态的、共性的）：
+        <ul>
+          <li><strong>认识过程</strong>（知）：感觉、知觉、记忆、思维、想象</li>
+          <li><strong>情感过程</strong>（情）：人对现实事物的态度体验</li>
+          <li><strong>意志过程</strong>（意）：克服困难、完成任务的心理过程</li>
+        </ul>
+      </li>
+      <li><strong>个性心理</strong>（稳定的、个别的）：
+        <ul>
+          <li><strong>个性倾向性</strong>：需要、动机、兴趣、理想、态度、信念、世界观</li>
+          <li><strong>个性心理特征</strong>：能力、气质、性格</li>
+        </ul>
+      </li>
+    </ul>
+    <p>心理过程和个性心理有机地组成人的完整的心理面貌。心理过程是基础，个性心理通过心理过程在实践基础上逐步形成，又反过来影响心理过程的进行。</p>
+  </div>
+
+  <h4>（二）应用心理学的主要分支</h4>
+  <table>
+    <tr><th>分支</th><th>核心研究内容</th></tr>
+    <tr><td><strong>教育心理学</strong></td><td>教育教学中教育者和受教育者的心理活动规律。介于教育科学和心理科学之间的边缘学科</td></tr>
+    <tr><td><strong>咨询心理学</strong></td><td>心理咨询的过程、原则、技巧和方法。帮助心理困扰者调适和解除困惑</td></tr>
+    <tr><td><strong>管理心理学</strong></td><td>管理活动中的心理活动规律。以人本思想为前提，核心是对人的激励</td></tr>
+    <tr><td><strong>消费心理学</strong></td><td>消费者购买、使用商品过程中的心理和行为规律</td></tr>
+    <tr><td><strong>环境心理学</strong></td><td>环境与人的心理和行为之间的关系（噪音、拥挤、温度、建筑设计等）</td></tr>
+    <tr><td><strong>法律心理学</strong></td><td>与法律有关的各种人的心理活动规律（立法心理、犯罪心理、司法心理等）</td></tr>
+  </table>
+  <p style="font-size: 0.9rem; color: var(--text-light);">此外还包括：工业心理学、人事心理学、商业心理学、工程心理学、犯罪心理学、运动心理学等。</p>
+
+  <div class="tip">
+    <span class="label">理解要点：理论与应用的关系</span>
+    <p>理论心理学和应用心理学并非截然分开，而是<strong>有机联系、相互融合、相互促进</strong>的。基础理论研究受实践中观察到的现象启发，而理论在实践中的应用可验证假设是否成立，进而推动理论发展。以本书为例：第二、三章属理论范畴，第五、八章属应用范畴，第四、六、七章则两者兼有。</p>
+  </div>
+
+  <!-- 1.2 学科性质 -->
+  <h3 id="sec1-2">二、心理学的学科性质</h3>
+
+  <div class="key-point">
+    <span class="label">讲义核心考点 ★必背</span>
+    <p>心理学是一门<strong>既具有自然科学的性质，又具有社会科学和人文科学性质的综合交叉学科</strong>。研究方法：实验和经验。历史渊源：哲学为母，生理学为父。</p>
+  </div>
+
+  <h4>（一）自然科学的性质</h4>
+  <ul>
+    <li><strong>从研究对象看：</strong>心理是人脑的属性，人脑是自然发展的产物。研究心理必须研究人脑的工作原理和机制</li>
+    <li><strong>从历史渊源看：</strong>近代心理学得益于自然科学发展——达尔文进化论（遗传、变异、环境、适应等概念），19世纪三位德国生理学家（缪勒、赫尔姆霍兹、费希纳）的研究奠定基础</li>
+    <li><strong>从研究方法看：</strong>心理学引进了系统实验方法，具有<strong>客观性、可验证性与系统性</strong>三大科学特征</li>
+  </ul>
+
+  <h4>（二）社会科学的性质</h4>
+  <p>马克思指出，人的本质"在其现实性上，他是一切社会关系的总和"。人是社会历史发展的产物，人的心理和意识具有<strong>社会性</strong>。心理学的许多分支（社会心理学、管理心理学、消费心理学等）都强调对人的社会关系、社会环境和文化历史背景的研究。</p>
+
+  <h4>（三）超科学的人文性质</h4>
+  <p>科学研究目的包括四个层次：<strong>描述 → 解释 → 预测 → 控制</strong>。但在研究人的幸福感、美感、价值观等主观性很强的问题时，很难纳入狭义的科学范畴。如果过分强调心理学的自然科学性而忽视人文性，会限制心理学的研究领域和发展空间。</p>
+
+  <div class="tip">
+    <span class="label">理解要点：科学研究的四个层次</span>
+    <p>以"男性平均身高高于女性"为例：<br>
+    ① <strong>描述</strong>——发现并陈述这个事实<br>
+    ② <strong>解释</strong>——说明为什么（染色体差异）<br>
+    ③ <strong>预测</strong>——根据因果关系预测结果<br>
+    ④ <strong>控制</strong>——在预测基础上对事物发展进行控制</p>
+  </div>
+
+  <h4>（四）综合交叉的性质</h4>
+  <p>心理现象的特殊性决定了心理学的交叉综合性，具体表现在五个方面：</p>
+  <table>
+    <tr><th>角度</th><th>体现</th></tr>
+    <tr><td>心理现象的主体</td><td>人是自然性和社会性的统一体</td></tr>
+    <tr><td>心理现象的器官</td><td>人脑的自然属性在社会生活方式影响下变化发展</td></tr>
+    <tr><td>心理现象的内容</td><td>社会存在和自然现实的统一</td></tr>
+    <tr><td>心理现象的形式</td><td>心理过程（人类共同性，受自然制约）vs 个性心理（个别性，受社会制约）</td></tr>
+    <tr><td>心理现象的实质</td><td>心理是人脑对客观现实的主观反映——既有客观性又有主观性</td></tr>
+  </table>
+
+  <!-- 1.3 学习意义 -->
+  <h3 id="sec1-3">三、学习和研究心理学的意义</h3>
+  <ul>
+    <li><strong>理论意义：</strong>为辩证唯物主义哲学提供科学依据，破除迷信，帮助树立科学的世界观与人生观；为自然科学与社会科学研究提供心理科学依据</li>
+    <li><strong>实践意义：</strong>帮助人们认识自己、了解自己，指导各种实践活动，调节人与人、人与自然、人与社会的关系，促进社会整合与人类进步</li>
+  </ul>
+
+  <div class="summary">
+    <h4>第一节 小结</h4>
+    <ul>
+      <li>心理学 = 研究心理现象及其规律的科学；心理 = 人脑的机能 + 对客观现实的主观反映</li>
+      <li>两大领域：理论心理学（探原理）vs 应用心理学（重实践），二者相互融合</li>
+      <li>学科性质：综合交叉学科（自然科学 + 社会科学 + 人文性质），"哲学为母，生理学为父"</li>
+      <li>普通心理学是主干，将心理现象分为"心理过程"（知情意）和"个性心理"（倾向性+特征）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SECTION 2 ==================== -->
+<div class="section" id="sec2">
+  <div class="section-header">
+    <span class="section-number">第二节</span>
+    <h2>心理学的研究方法</h2>
+  </div>
+
+  <p>心理学之所以能从哲学思辨中独立出来成为一门科学，得益于其研究方法的发展。"心理学是伴随着研究方法的进步而进步的。"</p>
+
+  <!-- 2.1 -->
+  <h3 id="sec2-1">一、一般方法论和研究原则</h3>
+
+  <div class="key-point">
+    <span class="label">讲义核心考点</span>
+    <p><strong>一般方法论：</strong>辩证唯物论和历史唯物论</p>
+  </div>
+
+  <h4>心理学研究的六大原则</h4>
+  <table>
+    <tr><th>原则</th><th>含义</th></tr>
+    <tr><td><strong>客观性原则</strong></td><td>实事求是，坚持客观标准，不带主观偏见，如实地观察、分析和解释心理现象</td></tr>
+    <tr><td><strong>系统性原则</strong></td><td>从系统论出发，把心理现象放在整体性、动态的、相互联系的系统形式中考察，反对片面孤立</td></tr>
+    <tr><td><strong>理论与实践相结合原则</strong></td><td>实践是理论的源泉和检验真理的唯一标准，理论对实践有指导作用</td></tr>
+    <tr><td><strong>伦理性原则</strong></td><td>任何可能对研究对象造成伤害的研究都必须严格禁止</td></tr>
+    <tr><td><strong>发展性原则</strong></td><td>心理现象处于不断发展变化中，注意不同年龄阶段的心理变化及环境影响</td></tr>
+    <tr><td><strong>教育性原则</strong></td><td>研究要有利于教育目的的实现，有利于个体身心健康</td></tr>
+  </table>
+
+  <!-- 2.2 -->
+  <h3 id="sec2-2">二、具体研究方法</h3>
+
+  <div class="key-point">
+    <span class="label">讲义核心考点</span>
+    <p><strong>五大具体研究方法：</strong>观察法、实验法、个案研究法、调查法、内省法</p>
+  </div>
+
+  <!-- 观察法 -->
+  <h4>（一）观察法</h4>
+  <div class="definition">
+    <span class="label">定义：</span>根据研究课题，利用感觉器官和科学仪器，有目的、有计划地对被试的外部表现进行考察，从而研究其心理活动的方法。
+  </div>
+
+  <p><strong>观察法的分类：</strong></p>
+  <table>
+    <tr><th>分类标准</th><th>类型</th><th>特点</th></tr>
+    <tr><td rowspan="2">按观察者角色</td><td><strong>参与观察</strong></td><td>观察者加入被观察群体中。优点：资料深入丰富；缺点：易受影响，客观性降低</td></tr>
+    <tr><td><strong>非参与观察</strong></td><td>以旁观者身份观察。优点：比较客观真实；缺点：时间短，只能获得表面信息</td></tr>
+    <tr><td rowspan="2">按观察场所</td><td><strong>自然场所现场观察</strong></td><td>在自然场所对日常活动观察。优点：自然真实；缺点：无法直接解释原因，被动等待</td></tr>
+    <tr><td><strong>人为场所情景观察</strong></td><td>在人为控制场所观察。优点：主动性强；缺点：对被试自然表现造成压力</td></tr>
+    <tr><td rowspan="2">按观察时间</td><td><strong>长期观察</strong></td><td>如普莱尔对儿子连续三年每天三次观察，写成《儿童心理学》</td></tr>
+    <tr><td><strong>短期观察</strong></td><td>观察时间相对较短</td></tr>
+    <tr><td rowspan="2">按观察内容</td><td><strong>全面观察</strong></td><td>观察被试的全部心理表现</td></tr>
+    <tr><td><strong>重点观察</strong></td><td>观察某一方面或几方面的心理表现</td></tr>
+  </table>
+
+  <p><strong>运用观察法的注意事项：</strong>① 事先要有明确的观察目的；② 随时记录，充分利用录音、录像等现代手段；③ 每次观察时间不宜过长，可重复观察。</p>
+
+  <!-- 实验法 -->
+  <h4>（二）实验法</h4>
+  <div class="definition">
+    <span class="label">定义：</span>按研究目的控制或创造条件，主动引起或改变被试的心理活动，并对其进行研究的方法。核心是在保持其他因素恒定的前提下，研究<strong>自变量</strong>（引起变化的因素）和<strong>因变量</strong>（引起的变化）的关系。
+  </div>
+
+  <table>
+    <tr><th></th><th>实验室实验法</th><th>自然实验法</th></tr>
+    <tr><td><strong>场所</strong></td><td>特定心理实验室</td><td>日常生活条件</td></tr>
+    <tr><td><strong>控制程度</strong></td><td>严格控制四个方面：实验情境、被试、实验刺激、被试反应</td><td>适当控制或改变某些条件</td></tr>
+    <tr><td><strong>优点</strong></td><td>能主动获取心理现象，探究机制与规律，信息准确可靠</td><td>减少人为性，提高真实性</td></tr>
+    <tr><td><strong>缺点</strong></td><td>人为特点明显，被试易意识到，对无关因素控制不易完全实现</td><td>实验控制不严格，易受无关变量影响</td></tr>
+    <tr><td><strong>应用领域</strong></td><td>动物心理、心理的生理机制等</td><td>儿童心理学、教育心理学、社会心理学</td></tr>
+  </table>
+
+  <!-- 个案研究法 -->
+  <h4>（三）个案研究法</h4>
+  <div class="definition">
+    <span class="label">定义：</span>把个人或社会群体作为研究单位，以某一个或几个特性为研究对象，探讨相关因素及其相互关系。常用于教育心理学、儿童心理学、医学心理学和咨询心理学。
+  </div>
+  <p><strong>两个基本特点：</strong></p>
+  <ul>
+    <li>注重对个案有关的具体事实和细节作<strong>深入研究</strong>，积累丰富资料</li>
+    <li>要求对问题的发生、发展过程与特征及因果关系作<strong>客观分析和正确推论</strong></li>
+  </ul>
+  <p><strong>优点：</strong>应用范围广；对理论发展有重要作用（如弗洛伊德的精神动力学说很大程度上归功于个案分析）。</p>
+  <p><strong>缺点：</strong>个案提供的信息可能失真（被试可能扭曲过去以取悦研究者）；研究者可能因自身期望微妙地影响研究对象。</p>
+
+  <!-- 调查法 -->
+  <h4>（四）调查法</h4>
+  <div class="definition">
+    <span class="label">定义：</span>从总体中按一定规则抽取样本，以提出问题的形式收集资料来研究心理的方法（即抽样调查）。
+  </div>
+
+  <p><strong>调查法的分类：</strong></p>
+  <ul>
+    <li>按目的：一般调查 vs 专题调查</li>
+    <li>按内容性质：事实特征调查 vs 征询意见调查</li>
+    <li>按问题格式：结构式调查（有固定答案）vs 非结构式调查（自由发挥）</li>
+    <li>按资料收集方式：当面访谈法、邮寄问卷法、电话调查法</li>
+  </ul>
+
+  <table>
+    <tr><th>方式</th><th>优点</th><th>缺点</th></tr>
+    <tr><td>当面访谈</td><td>易控制质量和环境，适合复杂问题</td><td>成本高，灵活性小，不适合敏感问题</td></tr>
+    <tr><td>邮寄问卷</td><td>成本低，适合敏感问题</td><td>回收率低，质量无保障</td></tr>
+    <tr><td>电话调查</td><td>成本较低，操作灵活，能控制情境</td><td>受电话普及率影响</td></tr>
+  </table>
+
+  <!-- 内省法 -->
+  <h4>（五）内省法</h4>
+  <div class="definition">
+    <span class="label">定义：</span>又称自我观察法（self-observation），依靠对自己意识经历的反省来寻找心理学问题的答案。两种方式：① 个体对自己内心世界深入审视与思索；② 要求被试把心理活动口头或书面报告出来加以研究。
+  </div>
+  <p><strong>历史演变：</strong>早期构造主义心理学家使用 → 行为主义完全否定 → 20世纪60年代认知心理学兴起后重新使用。</p>
+  <div class="tip">
+    <span class="label">理解要点</span>
+    <p>内省法必须同其他客观研究方法相结合，才能成为真正有效的方法。单独使用有明显局限性——人对自己心理过程的观察往往不够客观和准确。</p>
+  </div>
+
+  <!-- 观察法 vs 实验法 辨析 -->
+  <div class="exam-focus" id="sec2-obs-vs-exp">
+    <span class="label">易混淆点：人为场所情景观察 vs 实验法</span>
+    <p>两者虽然都在人为控制的环境中进行，但存在本质区别：</p>
+    <table>
+      <tr><th>比较维度</th><th>人为场所情景观察（观察法的一种）</th><th>实验法</th></tr>
+      <tr><td><strong>核心特征</strong></td><td>只<strong>观察和记录</strong>，研究者不对变量进行主动操纵</td><td><strong>主动操纵</strong>自变量，观察其对因变量的影响</td></tr>
+      <tr><td><strong>研究者角色</strong></td><td>旁观者/记录者：看到什么记什么</td><td>干预者/操纵者：主动改变条件</td></tr>
+      <tr><td><strong>变量控制</strong></td><td>控制环境但不操纵变量，让行为自然发生</td><td>控制无关变量 + 有目的地操纵自变量</td></tr>
+      <tr><td><strong>因果关系</strong></td><td>不能直接推断因果关系</td><td>可以推断因果关系（自变量→因变量）</td></tr>
+      <tr><td><strong>举例</strong></td><td>在布置好的模拟教室里观察儿童的游戏行为，<strong>不干预</strong>他们怎么玩</td><td>将儿童随机分两组，一组给奖励、一组不给，<strong>比较</strong>两组游戏行为差异</td></tr>
+    </table>
+    <p><strong>一句话区分：</strong>人为场所观察是"布置了场景但不动手，等着看发生了什么"；实验法是"我主动改变某个条件，看看因此发生了什么变化"。</p>
+  </div>
+
+  <!-- 2.3 -->
+  <h3 id="sec2-3">三、常用研究技术和手段</h3>
+  <table>
+    <tr><th>技术</th><th>内容</th></tr>
+    <tr><td><strong>实验和研究设计法</strong></td><td>包括实验设计、准实验设计和非实验设计</td></tr>
+    <tr><td><strong>对数据的统计处理法</strong></td><td>用统计技术（如SPSS）处理数据，包括描述统计和推断统计</td></tr>
+    <tr><td><strong>逻辑思维推理法</strong></td><td>通过分析、综合、比较、分类、抽象、概括，运用归纳、演绎得出结论</td></tr>
+  </table>
+
+  <!-- 2.4 伦理 -->
+  <h3 id="sec2-4">四、心理学研究中的伦理问题</h3>
+  <p>心理学研究的最终目的是增进人类福利。研究中必须注意：</p>
+  <ul>
+    <li><strong>避免伤害：</strong>尽量减少被试可能遭遇的心理压力（害怕、焦虑、尴尬、内疚等），必要时修正或放弃研究方案</li>
+    <li><strong>不能强迫：</strong>被试应自愿参加，尤其是为取得报酬而参加的情况</li>
+    <li><strong>欺骗的事后说明：</strong>如不得不采取"欺骗"手段，事后须向被试阐明研究的相关情况</li>
+    <li><strong>保护隐私：</strong>严格保护被试个人隐私，保证匿名性</li>
+  </ul>
+  <p><strong>三条实践原则：</strong>① 实验条件最好与日常生活条件相似；② 被试应志愿参加；③ 尽可能不给被试留下比受试前更痛苦的感觉。</p>
+  <p><strong>动物实验的可行性：</strong>① 进化论表明物种行为方式相互联系；② 对人的研究有伦理限制；③ 动物繁殖迅速，环境易控制，研究者不易掺杂个人感情。但也需遵守伦理，尽量减少伤害。</p>
+
+  <div class="summary">
+    <h4>第二节 小结</h4>
+    <ul>
+      <li>一般方法论 = 辩证唯物论和历史唯物论；六大原则 = 客观、系统、理论联系实践、伦理、发展、教育</li>
+      <li>五大具体方法：观察法（有目的有计划地看）、实验法（控制条件主动引起）、个案法（深入研究个体）、调查法（抽样问卷）、内省法（自我观察）</li>
+      <li>实验法核心：控制自变量，观察因变量，保持其他因素恒定</li>
+      <li>内省法经历"使用→否定→重新使用"的演变，必须与其他客观方法结合</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== SECTION 3 ==================== -->
+<div class="section" id="sec3">
+  <div class="section-header">
+    <span class="section-number">第三节</span>
+    <h2>心理学的发展历史与流派</h2>
+  </div>
+
+  <p style="font-style: italic; color: var(--text-light); border-left: 3px solid var(--border); padding-left: 16px;">"心理学有一个悠久的过去，但作为一门学科却只有一个短暂的历史。" —— 艾宾浩斯</p>
+
+  <!-- 3.1 发展历史 -->
+  <h3 id="sec3-1">一、心理学的发展历史</h3>
+
+  <h4>（一）孕育阶段（古代 — 19世纪中叶）</h4>
+  <p>心理学最初的理念蕴含在古希腊哲学家的学说中，夹杂在哲学和神学研究中进行。</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="time">古希腊 · 亚里士多德</div>
+      <div class="content">著作《<strong>灵魂论</strong>》——从某种意义上可说是<strong>最古老的一本心理学专著</strong>。将灵魂分为三部分：植物灵魂（营养生长）、动物灵魂（本能情感欲望）、理性灵魂（思维理解判断）。认为行为动机来源于<strong>趋乐避苦</strong>。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time">古希腊 · 德谟克利特</div>
+      <div class="content"><strong>原子论</strong>思想——认为灵魂同物质一样由原子构成，人死灵魂原子分散。最早提出<strong>自由意志</strong>问题的人之一。人类行为来源于外在刺激。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time">古希腊 · 柏拉图</div>
+      <div class="content">神学唯心主义者。提出"现象世界"与"理念世界"，认为人由<strong>肉体和灵魂组成</strong>。认识不是对物质世界的感受，而是对<strong>理念世界的回忆</strong>。</div>
+    </div>
+    <div class="timeline-item" id="sec3-1-descartes">
+      <div class="time">近代 · 笛卡尔（法国）</div>
+      <div class="content"><strong>近代哲学之父</strong>，以"<strong>我思故我在</strong>"（Cogito, ergo sum）确立了理性作为知识的可靠基础。提出<strong>心身二元论</strong>——将心灵（思维实体）与身体（广延实体）区分开来，这一分离为后来科学地研究身体和心理奠定了基础。他在生理学上的重要贡献是提出了<strong>反射</strong>（reflex）概念的雏形：认为动物的身体活动是机械性的，外部刺激通过"动物精气"沿神经传导至肌肉，引起自动反应，无须心灵参与。笛卡尔还提出"<strong>动物是机器</strong>"的观点，认为动物没有灵魂，只是复杂机械。视<strong>人为机器</strong>，其活动机制能被理解和解释。认为人天生具有产生感官经验的心理功能，身体活动由理性的心理功能控制。后经康德发展为<strong>理性主义</strong>。这些思想让心理学从此可以用科学方法来研究身心问题，为心理学脱离哲学母体走向独立奠定了重要基础。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time">近代 · 洛克（英国）</div>
+      <div class="content"><strong>实证主义</strong>最重要人物。认为人类一切知识来源于<strong>后天经验</strong>，人性犹如<strong>白板</strong>一块。记忆来自<strong>观念联想</strong>（association of ideas）。</div>
+    </div>
+  </div>
+
+  <div class="tip">
+    <span class="label">理解要点：笛卡尔 vs 洛克</span>
+    <p>这代表了两种对立的认识论传统：<br>
+    <strong>笛卡尔（理性主义）</strong>：知识来源于先天的理性能力<br>
+    <strong>洛克（经验主义/实证主义）</strong>：知识来源于后天经验，人性如白板<br>
+    这两种思想的张力贯穿了整个心理学史。</p>
+  </div>
+
+  <h4>（二）确立阶段（19世纪中叶 — 1879年）</h4>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="time">1859年 · 达尔文</div>
+      <div class="content">出版《<strong>物种起源</strong>》，提出"物竞天择，适者生存"的进化论。遗传、变异、环境、个别差异、适应等概念成为科学心理学研究的主题。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time">19世纪 · 缪勒（J. Muller）</div>
+      <div class="content"><strong>柏林大学教授，被后人视为生理心理学的先驱。</strong>提出<strong>特殊能量学说</strong>——大脑功能分区专司，各种神经传导发生特殊能量使人类能感觉和分辨外界刺激。还提出神经细胞间电化作用产生神经冲动的理论。其理论后来由其弟子赫尔姆霍兹经实验证实。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time">19世纪 · 赫尔姆霍兹（H. Helmholtz）</div>
+      <div class="content">缪勒的弟子，实验证实了神经冲动理论。提出<strong>色觉理论</strong>与<strong>听觉理论</strong>，至今仍是心理学解释色觉与听觉的重要理论根据。</div>
+    </div>
+    <div class="timeline-item">
+      <div class="time">1860年 · 费希纳（G. T. Fechner）</div>
+      <div class="content">通过实验研究物理刺激变化对心理经验的影响，探讨身心关系。这类研究揭示物理刺激与心理反应之间的关系，称为<strong>心理物理学</strong>。出版《<strong>心理物理学纲要</strong>》。<strong>缪勒、赫尔姆霍兹与费希纳三位德国生理学家被共同视为生理心理学的先驱。</strong></div>
+    </div>
+    <div class="timeline-item">
+      <div class="time">1879年 · 冯特（W. Wundt） ★</div>
+      <div class="content">在<strong>莱比锡大学创立世界上第一个心理实验室</strong>，标志着<strong>科学心理学脱离哲学母体而独立</strong>。冯特被誉为<strong>近代心理第一人 / 心理学之父</strong>。其《<strong>生理心理学原理</strong>》被心理学界认为是<strong>心理学的独立宣言</strong>。冯特的心理学体系被称为<strong>内容心理学</strong>。</div>
+    </div>
+  </div>
+
+  <div class="exam-focus">
+    <span class="label">高频考题：冯特对心理学的贡献（多选题 ABCD）</span>
+    <p><strong>A. 心理学的独立</strong> — 使心理学从旧哲学中独立出来<br>
+    <strong>B. 实验心理学的创立</strong> — 首先用系统实验方法研究心理现象<br>
+    <strong>C. 出版《生理心理学原理》</strong> — 被认为是心理学的独立宣言<br>
+    <strong>D. 建立心理学专业队伍</strong> — 用莱比锡实验室培养了一大批学生<br>
+    <span style="font-size: 0.85rem; color: var(--text-light);">（讲义标注答案为 ABD，但根据教科书中"冯特的历史功绩与三件大事分不开：心理科学的独立、实验心理学的创立和心理学专业队伍的建立"，C 也是正确答案。建议全选 ABCD。）</span></p>
+  </div>
+
+  <!-- 3.2 主要流派 -->
+  <h3 id="sec3-2">二、心理学的主要流派</h3>
+  <p>自1879年以来，心理学界出现了上百个学派。下面介绍影响最大的四个学派：</p>
+
+  <!-- 精神分析 -->
+  <div class="school-card">
+    <div class="school-header">
+      <span class="school-number" style="background: #dc2626;">1</span>
+      <span class="school-title">精神动力学派（精神分析学派）</span>
+    </div>
+    <div class="school-meta">
+      创立时间：1896年 | 创始人：弗洛伊德（S. Freud, 1856—1939，<strong>奥地利</strong>） | 地位："心理学界第一大势力" | 人性观：人性恶 | <strong>起源国：奥地利 · 盛行于欧美</strong>
+    </div>
+
+    <p><strong>早期理论（1920年前）——三大方面：</strong></p>
+    <div class="tip" style="margin-top:0;">
+      <span class="label">深入理解：意识、前意识、潜意识三者的关系</span>
+      <p>弗洛伊德将人的心理比作一座<strong>冰山</strong>：</p>
+      <ul>
+        <li><strong>意识（conscious）— 冰山露出水面的尖端：</strong>
+          只是心理活动极小的一部分，是人<strong>当前能够觉察到</strong>的心理内容。比如你现在读这句话时意识到了"我在看书"。
+          <br><em>功能：感知外部世界，做出理性判断。</em></li>
+        <li><strong>前意识（preconscious）— 水面附近的冰层：</strong>
+          <strong>介于意识和潜意识之间</strong>，是那些虽然当前没有意识到、但<strong>可以随时被回想起来</strong>的经验和知识。
+          比如你此刻没在想"我家住哪里"，但只要被问到，立刻就能想起来。
+          <br><em>前意识如同一个"待命存储器"，它起到"检查员"的作用，筛选潜意识中被压抑的内容是否可以进入意识。</em></li>
+        <li><strong>潜意识（unconscious，又称无意识）— 水下庞大的冰体：</strong>
+          占心理活动<strong>绝大部分</strong>，是被压抑的<strong>原始本能、冲动、欲望、创伤性记忆</strong>的储藏室。
+          这些内容因为不符合社会道德规范而被拒于意识门外，但它们并未消失，而是暗中主动地影响人的行为。
+          <br><em>举例：一个人莫名其妙地害怕某个地方，后来在心理咨询中发现，是因为童年在那里经历过创伤——这个记忆被"压入"了潜意识，但恐惧感仍然存在。</em></li>
+      </ul>
+      <p><strong>三者关系：</strong>前意识像一道<strong>闸门</strong>（或称"检查员"），潜意识中的内容必须通过它的审查才能进入意识。那些过于强烈的本能冲动和痛苦记忆会被前意识拦截，继续留在潜意识中，但会通过梦、口误、神经症症状等方式<strong>变相表达</strong>出来。弗洛伊德认为，<strong>心理治疗的根本任务就是将潜意识的内容"意识化"</strong>——让病人意识到自己真正的问题所在。</p>
+      <p><strong>术语说明：</strong>在中文心理学文献中，"<strong>潜意识</strong>"与"<strong>无意识</strong>"有时通用，但严格来说：<strong>潜意识</strong>更常特指弗洛伊德意义上的 unconscious（有动力性的、被压抑的心理内容），而<strong>无意识</strong>的含义更宽泛（包括非注意、自动化加工等）。本讲义按教科书表述统一使用"潜意识"。</p>
+    </div>
+    <table>
+      <tr><th>理论</th><th>核心内容</th></tr>
+      <tr><td><strong>潜意识理论</strong></td><td>心理分为三部分：<br>① <strong>意识</strong>：可以觉察到的心理部分，最高形式<br>② <strong>前意识</strong>：可从潜意识中召回到意识中的部分（能回忆起来的经验）<br>③ <strong>潜意识</strong>：原始本能与冲动、出生后的欲望，被压抑在意识阈之下，但积极活动追求满足</td></tr>
+      <tr><td><strong>梦的解析</strong></td><td>梦不是偶然的，而是潜意识中被压抑的本能或欲望的<strong>变相满足</strong>。通过梦的分析可了解人的潜意识</td></tr>
+      <tr><td><strong>泛性论</strong></td><td>强调性的作用，性不仅是生殖，还包含一切驱使寻求快感的潜力——"<strong>里比多</strong>"（libido）。人的一切活动都直接或间接与里比多有关</td></tr>
+    </table>
+
+    <p><strong>后期理论——两部分：</strong></p>
+    <table>
+      <tr><th>理论</th><th>核心内容</th></tr>
+      <tr><td><strong>本能学说</strong></td><td>两个带两极性的本能：<br>① <strong>生的本能</strong>：代表爱和建设的力量<br>② <strong>死的本能</strong>：代表破坏的力量</td></tr>
+      <tr><td><strong>人格理论</strong></td><td>人格分为三部分：<br>① <strong>本我（id）</strong>：先天本能和欲望，属于潜意识领域，不能直接接触外界<br>② <strong>自我（ego）</strong>：意识的结构部分，处于本我和超我之间，对本我起<strong>调节和缓冲</strong>作用<br>③ <strong>超我（superego）</strong>："道德化了的自我"，由良心和自我理想组成，作用是<strong>指导自我去限制本我的冲动</strong><br>三者保持平衡，否则可能导致精神病。童年经历对人格形成起决定性作用</td></tr>
+    </table>
+
+    <div class="key-point">
+      <span class="label">评价（考点）</span>
+      <p><strong>贡献：</strong>把无意识、梦等问题引入心理学，扩大了研究范畴，影响波及哲学、文学、艺术等多个领域。<br>
+      <strong>缺陷：</strong>夸大了无意识的作用，把本能、欲望和性视为一切行为动力来源，具有<strong>生物还原论</strong>倾向，忽视了社会文化对人类心理和行为的影响。是一种悲观的、认为人类前景暗淡的看法。</p>
+    </div>
+    <div class="exam-focus">
+      <span class="label">特别辨析：弗洛伊德理论的核心是不是泛性论？</span>
+      <p><strong>教材的表述：</strong>"泛性论的观点是其理论的核心，但也是其日后屡遭批评与非议的焦点。"</p>
+      <p><strong>准确理解：</strong>弗洛伊德的早期理论由<strong>潜意识理论、梦的解析、泛性论三大支柱</strong>共同构成。<strong>潜意识理论</strong>是整个精神分析学说的<strong>基石</strong>——没有潜意识概念，就没有精神分析；<strong>泛性论</strong>则是关于行为动机的<strong>核心解释机制</strong>——它回答了"潜意识中的动力到底是什么"这个关键问题。可以说：潜意识是<strong>框架</strong>，泛性论是<strong>驱动引擎</strong>，二者缺一不可。但正是泛性论"把性视为人类一切行为的最终动力"这一极端观点，使其成为最受争议的部分。</p>
+    </div>
+  </div>
+
+  <!-- 行为主义 -->
+  <div class="school-card">
+    <div class="school-header">
+      <span class="school-number" style="background: #2563eb;">2</span>
+      <span class="school-title">行为主义学派</span>
+    </div>
+    <div class="school-meta">
+      产生时间：20世纪初 | 创始人：华生（J. B. Watson，<strong>美国</strong>） | 地位："心理学界第二大势力" | 人性观：人性无善恶 | <strong>起源国：美国 · 盛行于美国</strong>
+    </div>
+
+    <p><strong>建立的标志：</strong>1914年华生出版《<strong>行为：比较心理学导论</strong>》。核心主张：心理即<strong>刺激→反应</strong>（S→R）。</p>
+
+    <p><strong>发展阶段：</strong></p>
+    <table>
+      <tr><th>阶段</th><th>代表人物</th><th>核心观点</th></tr>
+      <tr><td><strong>早期行为主义</strong><br>（1913—1930）</td><td>华生</td><td>在巴甫洛夫条件反射学说基础上创立。主张摒弃意识等主观内容，只研究可观察的刺激和反应——"黑箱作业"。行为模式由环境决定，可通过后天学习获得、更改或消除</td></tr>
+      <tr><td><strong>新行为主义</strong><br>（20世纪30年代起）</td><td>托尔曼<br>（E. C. Tolman）</td><td>修正华生的极端观点，认为刺激与反应之间存在<strong>中间变量</strong>——个体当时的生理和心理状态（需求变量=动机，认知变量=能力），是行为的实际决定因子</td></tr>
+      <tr><td><strong>激进行为主义</strong></td><td>斯金纳<br>（B. F. Skinner，<strong>美国</strong>）</td><td>在巴甫洛夫<strong>经典条件反射</strong>（刺激引发反应，如铃声→唾液分泌）的基础上，斯金纳提出了<strong>操作性条件反射</strong>（operant conditioning）——行为的后果决定了该行为未来出现的概率。他设计了一个著名的实验装置——"<strong>斯金纳箱</strong>"（Skinner box）：箱内装有一根杠杆，老鼠按压杠杆就会掉落食物。饥饿的老鼠被放入箱中，一开始乱跑乱碰，偶然压到杠杆得到食物；此后老鼠压杠杆的频率越来越高——它"学会"了通过压杠杆获得食物。<br><br>
+      斯金纳将这种通过<strong>操作行为</strong>（主动做出的行为）来改变环境、获得奖惩的过程称为<strong>操作性条件反射</strong>（或工具性条件作用）。其中食物是<strong>强化物</strong>（reinforcer），运用强化物来提高某种反应（行为）频率的过程叫做<strong>强化</strong>（reinforcement）。<strong>强化</strong>可分为<strong>正强化</strong>（给予愉快刺激，如食物）和<strong>负强化</strong>（撤销厌恶刺激，如停止电击），两者都增加了行为出现的概率。与强化相对的是<strong>惩罚</strong>（punishment），其作用是降低行为出现的概率。<br><br>
+      斯金纳认为<strong>强化训练是解释机体学习过程的主要机制</strong>，人的一切复杂行为都是由环境中的强化历史塑造的。他甚至提出可以操作环境中的强化程序来<strong>塑造</strong>（shaping）任何行为——这就是他的<strong>激进的行为主义</strong>立场：不承认任何内在心理状态的存在，只研究可观察的行为与环境之间的关系。</td></tr>
+    </table>
+
+    <div class="key-point">
+      <span class="label">评价（考点）</span>
+      <p><strong>贡献：</strong>引入更客观精确的研究方法，促进心理学客观研究，清除唯心主义不良影响，使心理学摆脱思辨方法。<br>
+      <strong>局限：</strong>机械还原论和简单化倾向严重，将人机械化、动物化。将研究范围限定在外显行为，使心理学内涵窄化，成为"没有心理的心理学"。</p>
+    </div>
+  </div>
+
+  <!-- 人本主义 -->
+  <div class="school-card">
+    <div class="school-header">
+      <span class="school-number" style="background: #16a34a;">3</span>
+      <span class="school-title">人本主义学派</span>
+    </div>
+    <div class="school-meta">
+      兴起时间：20世纪五六十年代 | 代表人物：马斯洛（A. H. Maslow，<strong>美国</strong>）、罗杰斯（C. R. Rogers，<strong>美国</strong>） | 地位："心理学界第三大势力" | 人性观：人性善 | <strong>起源国：美国 · 盛行于美国</strong>
+    </div>
+
+    <p><strong>基本主张：</strong>以正常人、健康人为研究对象，反对将人低俗化、动物化、机械化。批评行为主义是"幼稚心理学"（以动物和儿童为基础），精神分析是"病态心理学"（以精神病患者为基础）。强调人的价值、本性与尊严，认为人性本善，恶是后天环境作用的结果。</p>
+
+    <p><strong>核心理论——自我实现理论：</strong></p>
+
+    <p><strong>马斯洛的需要层次理论</strong>（五个层次，从下到上形成金字塔结构）：</p>
+    <table>
+      <tr><th>层次</th><th>需要</th><th>类型</th><th>满足方式</th></tr>
+      <tr><td>第五层</td><td><strong>自我实现的需要</strong></td><td rowspan="2">高级需要（生长需要）</td><td rowspan="2">通过内部因素满足<br>人类特有，引起成长性动机</td></tr>
+      <tr><td>第四层</td><td><strong>尊重的需要</strong></td></tr>
+      <tr><td>第三层</td><td><strong>归属和爱的需要</strong></td><td rowspan="3">低级需要（缺失需要）</td><td rowspan="3">通过外部条件满足<br>人与动物共有，引起匮乏性动机</td></tr>
+      <tr><td>第二层</td><td><strong>安全需要</strong></td></tr>
+      <tr><td>第一层</td><td><strong>生理需要</strong></td></tr>
+    </table>
+    <p style="font-size: 0.9rem;">只有低层需要满足后，才会产生高层次需要。人本主义心理学的目标是<strong>促进人的自我实现</strong>。马斯洛将自我实现时体验到的深刻幸福感称为"<strong>高峰体验</strong>"。</p>
+
+    <p><strong>罗杰斯的自我理论：</strong>儿童的自我概念在与他人、环境的相互作用中逐渐形成。人为得到关怀与尊重，会将他人的价值观念内化，导致自我与经验之间产生异化。人本主义治疗的目标是去除不属于自己的自我部分，找回健康向上的潜能，"让每一个人成长为自己"。</p>
+
+    <div class="key-point">
+      <span class="label">评价（考点）</span>
+      <p><strong>贡献：</strong>将心理学研究范围扩大到爱、道德、价值等人的精神世界方面；批判科学主义，找回人文精神；关心人的价值和尊严，以人为本。<br>
+      <strong>局限：</strong>理论薄弱、空洞，思辨性和猜测多，缺少严格证据，方法上缺少新突破。对人的社会性本质强调不够。</p>
+    </div>
+  </div>
+
+  <!-- 认知学派 -->
+  <div class="school-card">
+    <div class="school-header">
+      <span class="school-number" style="background: #7c3aed;">4</span>
+      <span class="school-title">认知学派（认知心理学）</span>
+    </div>
+    <div class="school-meta">
+      兴起时间：20世纪50年代 | 成为主思潮：70年代 | 不是由某一人创立，而是在多因素影响下逐步形成 | <strong>兴起于美国 · 盛行于西方</strong>
+    </div>
+
+    <p><strong>广义与狭义之分：</strong></p>
+    <ul>
+      <li><strong>广义认知心理学：</strong>凡是研究人认识世界的高级心理过程（注意、知觉、表象、记忆、思维、语言等）都属于此范畴</li>
+      <li><strong>狭义认知心理学：</strong>实际上就是<strong>信息加工心理学</strong></li>
+    </ul>
+
+    <p><strong>核心观点：</strong>以<strong>信息加工</strong>的观点研究人类认知过程。受信息论、系统论、控制论影响，与现代计算机技术密切相关。将人看作一个类似于计算机的信息加工系统，认为<strong>人脑与计算机的工作原则是相同的</strong>——人脑接受信息、处理加工、输出信息，相当于计算机输入、编码转译、分析处理、输出信息的过程。</p>
+
+    <p>认知心理学强调人<strong>已有的知识结构</strong>在行为过程与认知过程中起决定作用。</p>
+
+    <div class="key-point">
+      <span class="label">评价（考点）</span>
+      <p><strong>进步意义：</strong>被称为"心理学发展史上的<strong>第二次革命</strong>"（行为主义兴起为第一次）。在研究对象上，从外显行为转向内在心理过程；在研究方法上，除实验室实验外也强调主观经验报告；强调理性与认识的作用，重视内部心理过程研究。<br>
+      <strong>局限：</strong>① 忽视人的社会性与复杂性，简单地把人脑比作计算机；② 过于强调已有知识经验，忽视当前社会条件与实践活动的的作用；③ 研究范围主要局限于认识过程。</p>
+    </div>
+  </div>
+
+  <!-- 四大流派对比 -->
+  <h4>四大流派对比总结</h4>
+  <table>
+    <tr><th>学派</th><th>地位</th><th>创始人/代表</th><th>创始人国籍</th><th>起源·盛行</th><th>核心主张</th><th>人性观</th></tr>
+    <tr><td>精神动力学派</td><td>第一势力</td><td>弗洛伊德（1896）</td><td><strong>奥地利</strong></td><td>奥地利→盛行欧美</td><td>潜意识、梦、人格结构</td><td>人性恶</td></tr>
+    <tr><td>行为主义学派</td><td>第二势力</td><td>华生（1914）</td><td><strong>美国</strong></td><td>美国→盛行美国</td><td>刺激→反应，只研究行为</td><td>人性无善恶</td></tr>
+    <tr><td>人本主义学派</td><td>第三势力</td><td>马斯洛、罗杰斯</td><td><strong>均为美国</strong></td><td>美国→盛行美国</td><td>自我实现，需要层次理论</td><td>人性善</td></tr>
+    <tr><td>认知学派</td><td>第二次革命</td><td>无单一创始人</td><td>—</td><td><strong>兴起于美国</strong>→盛行西方</td><td>信息加工，人脑类比计算机</td><td>—</td></tr>
+  </table>
+
+  <!-- 3.3 现状与趋势 -->
+  <h3 id="sec3-3">三、心理学的研究现状和发展趋势</h3>
+
+  <h4>（一）研究现状</h4>
+  <ul>
+    <li><strong>学派关系缓和：</strong>由最初的激烈论战、相互对立，演变为今天的<strong>和谐共存、相互包容</strong>。出现后行为主义、新精神分析理论、超个人心理学等修正理论</li>
+    <li><strong>学科不断分化：</strong>新的分支学科、交叉学科、边缘学科不断出现</li>
+    <li><strong>方法综合化、手段现代化：</strong>多种方法综合使用，借助录音、录像、计算机等现代技术设备</li>
+  </ul>
+
+  <h4>（二）发展趋势</h4>
+  <table>
+    <tr><th>趋势</th><th>内涵</th></tr>
+    <tr><td><strong>1. 综合化</strong></td><td>各学派和理论之间和谐共处，边缘学科发展为不同理论融合架起桥梁，走向综合</td></tr>
+    <tr><td><strong>2. 本土化</strong></td><td>各国（中国、日本等）批判地吸收西方成果，结合本国国情研究民众心理，本土化趋势渐趋明显</td></tr>
+    <tr><td><strong>3. 实用化</strong></td><td>应用与普及是心理学发展的生命力，基础研究成果要应用到社会实践领域</td></tr>
+    <tr><td><strong>4. 跨学科</strong></td><td>心理学将成为自然科学和人文、社会科学的结合点。如神经心理学、超个人心理学（"第四势力"）等</td></tr>
+  </table>
+
+  <div class="summary">
+    <h4>第三节 小结</h4>
+    <ul>
+      <li>心理学"有悠久的过去，短暂的历史"——孕育于古希腊哲学，1879年冯特建实验室标志独立</li>
+      <li>确立阶段的四大先驱：达尔文（进化论）、缪勒（特殊能量学说）、赫尔姆霍兹（色觉/听觉理论）、费希纳（心理物理学）</li>
+      <li>冯特三大贡献：心理学独立 + 实验心理学创立 + 专业队伍建立；《生理心理学原理》= 独立宣言</li>
+      <li>四大流派：精神分析（第一势力/弗洛伊德/奥地利/人性恶）、行为主义（第二势力/华生/美国/人性无善恶）、人本主义（第三势力/马斯洛和罗杰斯/美国/人性善）、认知学派（第二次革命/兴起于美国/信息加工）</li>
+      <li>四大趋势：综合化、本土化、实用化、跨学科</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ==================== FINAL SUMMARY ==================== -->
+<div class="final-summary" id="summary">
+  <h2>备考要点速览</h2>
+
+  <h3>一、必背定义与概念</h3>
+  <ul>
+    <li><span class="label">心理学定义：</span>研究心理现象及其规律的科学。心理 = 人脑的机能 + 对客观现实的主观反映</li>
+    <li><span class="label">学科性质：</span>综合交叉学科（自然科学 + 社会科学 + 人文性质），"哲学为母，生理学为父"</li>
+    <li><span class="label">一般方法论：</span>辩证唯物论和历史唯物论</li>
+    <li><span class="label">科学心理学诞生标志：</span>1879年冯特在莱比锡大学建立世界第一个心理实验室</li>
+    <li><span class="label">心理学独立宣言：</span>冯特《生理心理学原理》</li>
+    <li><span class="label">最古老心理学著作：</span>亚里士多德《灵魂论》</li>
+    <li><span class="label">笛卡尔名言：</span>"我思故我在"，提出心身二元论和反射概念雏形，为心理学独立奠定哲学基础</li>
+    <li><span class="label">生理心理学先驱：</span>19世纪三位德国生理学家——缪勒（特殊能量学说）、赫尔姆霍兹（色觉/听觉理论）、费希纳（心理物理学）</li>
+  </ul>
+
+  <h3>二、高频考点清单</h3>
+  <ul>
+    <li>★ 心理学的研究领域分类（理论 vs 应用）及各分支学科</li>
+    <li>★ 心理学的学科性质（综合交叉——从五个角度理解）</li>
+    <li>★ 六大研究原则（客观、系统、理论联系实践、伦理、发展、教育）</li>
+    <li>★ 五大具体研究方法及各自优缺点</li>
+    <li>★ 实验法的自变量/因变量概念</li>
+    <li>★ 冯特对心理学的贡献（ABCD全选）</li>
+    <li>★ 四大流派的创始人、国籍、核心理论、人性观、评价</li>
+    <li>★ 弗洛伊德人格理论（本我/自我/超我）及意识三层结构（意识/前意识/潜意识）</li>
+    <li>★ 斯金纳操作性条件反射与强化原理</li>
+    <li>★ 马斯洛需要层次理论（五层，两大类，满足方式）</li>
+    <li>★ 人本主义核心 = 自我实现理论（马斯洛自我实现 + 罗杰斯自我理论）</li>
+    <li>★ 认知心理学 = 信息加工心理学，人脑类比计算机</li>
+    <li>★ 心理学发展四大趋势（综合化、本土化、实用化、跨学科）</li>
+  </ul>
+
+  <h3>三、易混知识点辨析</h3>
+  <ul>
+    <li><span class="label">理论心理学 vs 应用心理学：</span>前者探原理（普通心理学等），后者重实践（教育心理学等），二者相互融合</li>
+    <li><span class="label">实验室实验法 vs 自然实验法：</span>前者严格控制但人为性强，后者自然真实但控制不严</li>
+    <li><span class="label">人为场所情景观察 vs 实验法：</span>前者只观察不操纵（不能推断因果），后者主动操纵自变量（可推断因果）</li>
+    <li><span class="label">早期行为主义 vs 新行为主义 vs 激进行为主义：</span>华生S→R直接对应；托尔曼加入中间变量；斯金纳操作性条件反射+强化</li>
+    <li><span class="label">三次革命：</span>行为主义兴起 = 第一次革命；认知心理学兴起 = 第二次革命</li>
+    <li><span class="label">三大势力：</span>精神分析 = 第一势力；行为主义 = 第二势力；人本主义 = 第三势力</li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p>心理学概论 · 第一章 导论 | 基于孙时进主编教材 + 核心考点讲义整合编写</p>
+  <p>以讲义为骨架 · 教科书为血肉 · 助力高校教师资格证考试</p>
+</div>
+
+</div>
+
+<script>
+(function(){
+  var S=5; // short skip seconds
+  var L=300; // long press threshold ms
+  var toastTimer=null;
+  var longTimer=null;
+  var isLong=false;
+  var rewindId=null;
+  var currentKey=null;
+
+  function toast(m,isSpeed){
+    var o=document.querySelector('.kb-toast'); if(o)o.remove(); if(toastTimer)clearTimeout(toastTimer);
+    var d=document.createElement('div'); d.className='kb-toast'; d.textContent=m;
+    d.style.cssText='position:fixed;top:25%;left:50%;transform:translate(-50%,0);background:'+(isSpeed?'rgba(234,88,12,0.85)':'rgba(0,0,0,0.75)')+';color:#fff;font-size:1.1rem;padding:12px 28px;border-radius:24px;z-index:9999;pointer-events:none;font-family:-apple-system,"PingFang SC",sans-serif;animation:kb-in 0.3s ease-out';
+    document.body.appendChild(d);
+    toastTimer=setTimeout(function(){d.style.animation='kb-out 0.3s ease-in forwards';setTimeout(function(){d.remove()},300)},isSpeed?1200:700);
+  }
+
+  var styleEl=document.createElement('style');
+  styleEl.textContent='@keyframes kb-in{from{opacity:0;transform:translate(-50%,10px)}to{opacity:1;transform:translate(-50%,0)}}@keyframes kb-out{from{opacity:1}to{opacity:0}}';
+  document.head.appendChild(styleEl);
+
+  function cleanup(){
+    if(longTimer){clearTimeout(longTimer);longTimer=null;}
+    if(rewindId){clearInterval(rewindId);rewindId=null;}
+    var a=document.querySelector('audio');
+    if(a&&a.playbackRate!==1)a.playbackRate=1;
+    isLong=false;
+    currentKey=null;
+  }
+
+  document.addEventListener('keydown',function(e){
+    if(e.key===' '||e.key==='Spacebar'){
+      var a=document.querySelector('audio');if(!a)return;
+      e.preventDefault();
+      if(a.paused){a.play();toast('\u25B6 播放');}
+      else{a.pause();toast('\u23F8 暂停');}
+      return;
+    }
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+    if(e.repeat)return;
+    var a=document.querySelector('audio');if(!a)return;
+    if(a.paused||a.ended)return;
+    e.preventDefault();
+    currentKey=e.key;
+
+    longTimer=setTimeout(function(){
+      isLong=true;
+      if(currentKey==='ArrowRight'){
+        a.playbackRate=2;
+        toast('\u23E9 2x 快进中',true);
+      }else{
+        toast('\u23EA 2x 倒退中',true);
+        rewindId=setInterval(function(){
+          a.currentTime=Math.max(0,a.currentTime-0.16);
+        },80);
+      }
+    },L);
+  });
+
+  document.addEventListener('keyup',function(e){
+    if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+    var a=document.querySelector('audio');if(!a)return cleanup();
+
+    if(isLong){
+      a.playbackRate=1;
+      if(rewindId){clearInterval(rewindId);rewindId=null;}
+      toast('恢复原速',true);
+      cleanup();
+    }else{
+      clearTimeout(longTimer);longTimer=null;
+      if(e.key==='ArrowLeft'){
+        a.currentTime=Math.max(0,a.currentTime-S);
+        toast('\u23EA 后退 5s');
+      }else{
+        a.currentTime=Math.min(a.duration||1e9,a.currentTime+S);
+        toast('\u23E9 前进 5s');
+      }
+    }
+    currentKey=null;
+  });
+
+  window.addEventListener('blur',cleanup);
+  var a0=document.querySelector('audio');
+  if(a0)a0.addEventListener('ended',cleanup);
+})();
+</script>
+</body>
+</html>
